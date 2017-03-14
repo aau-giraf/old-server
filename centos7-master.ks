@@ -16,7 +16,7 @@ selinux --enforcing
 # Installation settings
 reboot
 cdrom
-graphical
+text
 firstboot --disable
 bootloader --location=mbr
 clearpart --all
