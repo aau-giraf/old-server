@@ -12,7 +12,7 @@ RUN /usr/local/bin/install-plugins.sh google-oauth-plugin:0.3 PrioritySorter:3.0
 #ENV PATH $PATH:$ANDROID_HOME/
 
 #USER root
-#RUN echo y | android update sdk --no-ui
+#RUN android update sdk --no-ui
 
 COPY config.xml /var/jenkins_home/config.xml
 COPY jobs /var/jenkins_home/
