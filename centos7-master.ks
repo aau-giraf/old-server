@@ -17,9 +17,11 @@ selinux --enforcing
 reboot
 cdrom
 text
+zerombr
 firstboot --disable
 bootloader --location=mbr
 clearpart --all
+autopart
 
 # System settings
 repo --name="EPEL" --baseurl=http://dl.fedoraproject.org/pub/epel/7/x86_64
