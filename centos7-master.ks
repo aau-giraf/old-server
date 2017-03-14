@@ -20,7 +20,7 @@ text
 zerombr
 firstboot --disable
 bootloader --location=mbr
-clearpart --all
+clearpart --all --initlabel
 autopart
 
 # System settings
