@@ -42,5 +42,5 @@ vim
 services --enabled=NetworkManager,sshd
 
 # Network settings
-network --bootproto=dhcp --device=eno16780032 --activate
+network --bootproto=dhcp --device=ens160 --activate
 network --hostname=master.giraf.cs.aau.dk
