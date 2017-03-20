@@ -1,0 +1,9 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: gluster-cluster
+spec:
+  ports:
+  - port: 1
+
