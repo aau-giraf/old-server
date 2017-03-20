@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: artifactory-pod
+  labels:
+    name: artifactory-pod  
+spec:
+  containers:
+  - name: artifactory-pod
+    image: artifactory
+    ports:
+    - name: http
+      containerPort: 8080
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - name: artifactory-vol
+      mountPath: /artifactory 
+      readOnly: false
+  securityContext:
+    supplementalGroups: [590]       
+  volumes:
+  - name: artifactory-vol 
+    persistentVolumeClaim:
+      claimName: artifactory-claim

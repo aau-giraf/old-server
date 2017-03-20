@@ -13,7 +13,6 @@ spec:
   volumes:
   - name: glusterfsvol
     glusterfs:
-      endpoints: glusterfs-cluster
+      endpoints: gluster-cluster
       path: kube_vol
       readOnly: true
-
