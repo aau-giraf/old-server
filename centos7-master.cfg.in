@@ -3,18 +3,24 @@ install
 # Accept Eula
 eula --agreed
 
-# Locale
+#-----------------#
+# Locale settings #
+#-----------------#
 keyboard 'dk'
 lang en_US
 timezone Europe/Copenhagen
 
-# Security settings
+#-------------------#
+# Security settings #
+#-------------------#
 auth  --useshadow  --passalgo=sha512
 rootpw --iscrypted $6$8BahqpkPXiBPy8kf$m7nDxC2ztDJqh7a.W2OGNLgtRr5c7zrnmOT5H4gJO1UkldhmU8FPBrQPS6ILeuak0wDvcdjZMDPRUKTuvdB3t/
 firewall --disabled
 selinux --enforcing
 
-# Installation settings
+#-----------------------#
+# Installation settings #
+#-----------------------#
 reboot
 cdrom
 text
@@ -22,7 +28,9 @@ zerombr
 firstboot --disable
 bootloader --location=mbr
 
-# Partition settings
+#--------------------#
+# Partition settings #
+#--------------------#
 clearpart --all --initlabel
 part pv.01 --fstype="lvmpv" --ondisk=sda --size=1000 --grow
 part pv.02 --fstype="lvmpv" --ondisk=sdc --size=1000 --grow
@@ -33,7 +41,9 @@ volgroup centos pv.01 pv.02
 logvol /  --fstype="xfs" --size=1000 --grow --name=root --vgname=centos
 logvol swap  --fstype="swap" --size=2048 --name=swap --vgname=centos
 
-# System settings
+#-----------------#
+# System settings #
+#-----------------#
 repo --name="epel" --baseurl=http://dl.fedoraproject.org/pub/epel/7/x86_64
 repo --name="gluster-epel"=http://buildlogs.centos.org/centos/7/storage/x86_64/gluster-3.10/
 %packages
@@ -42,7 +52,9 @@ repo --name="gluster-epel"=http://buildlogs.centos.org/centos/7/storage/x86_64/g
 %end
 services --enabled=NetworkManager,sshd
 
-# Network settings
+#------------------#
+# Network settings #
+#------------------#
 #network --bootproto=dhcp --device=ens160 --activate
 network --bootproto=static --ip=172.19.0.251 --netmask=255.255.255.224 --gateway=172.19.0.225 --nameserver=172.21.96.154,172.21.96.25
 network --hostname=master.giraf.cs.aau.dk
