@@ -49,6 +49,9 @@ repo --name="gluster-epel"=http://buildlogs.centos.org/centos/7/storage/x86_64/g
 %packages
 @base
 @core
+vim
+tmux
+yum-cron
 %end
 services --enabled=NetworkManager,sshd
 
