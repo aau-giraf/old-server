@@ -22,7 +22,6 @@ selinux --enforcing
 # Installation settings #
 #-----------------------#
 reboot
-cdrom
 text
 zerombr
 firstboot --disable
@@ -44,16 +43,23 @@ logvol swap  --fstype="swap" --size=2048 --name=swap --vgname=centos
 #-----------------#
 # System settings #
 #-----------------#
+repo --name="base" --baseurl=http://mirror.centos.org/centos/7/os/x86_64/
 repo --name="epel" --baseurl=http://dl.fedoraproject.org/pub/epel/7/x86_64
-repo --name="gluster-epel"=http://buildlogs.centos.org/centos/7/storage/x86_64/gluster-3.10/
+repo --name="gluster-epel" --baseurl=http://buildlogs.centos.org/centos/7/storage/x86_64/gluster-3.10/
+url --url="http://mirror.centos.org/centos/7/os/x86_64/"
 %packages
 @base
 @core
+-*firmware
+-iscsi*
+-fcoe*
+-b43-openfwwf
+-efibootmgr
 vim
 tmux
 yum-cron
 %end
-services --enabled=NetworkManager,sshd
+services --enabled=NetworkManager,sshd,yum-cron
 
 #------------------#
 # Network settings #
