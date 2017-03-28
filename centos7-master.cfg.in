@@ -65,5 +65,5 @@ services --enabled=NetworkManager,sshd,yum-cron
 # Network settings #
 #------------------#
 #network --bootproto=dhcp --device=ens160 --activate
-network --bootproto=static --ip=172.19.0.251 --netmask=255.255.255.224 --gateway=172.19.0.225 --nameserver=172.21.96.154,172.21.96.25
+network --bootproto=static --ip=172.19.0.251 --netmask=255.255.255.224 --gateway=172.19.0.225 --onboot=on --activate --nameserver=172.21.96.154,172.21.96.25
 network --hostname=master.giraf.cs.aau.dk
