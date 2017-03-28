@@ -18,14 +18,14 @@ do
     . "masters/$ID"
     KS_FILE_IN="$KS_IN_DIR/$DISTRO-master.cfg.in"
     KS_FILE_OUT="$KS_OUT_DIR/$DISTRO-$ID.cfg"
-    envsubst < "$KS_FILE_IN" > "$KS_FILE_OUT"
+    envsubst $SUB_VARS < "$KS_FILE_IN" > "$KS_FILE_OUT"
 done
 for ID in $NODE_IDS
 do
     . "nodes/$ID"
     KS_FILE_IN="$KS_IN_DIR/$DISTRO-node.cfg.in"
     KS_FILE_OUT="$KS_OUT_DIR/$DISTRO-$ID.cfg"
-    envsubst < "$KS_FILE_IN" > "$KS_FILE_OUT"
+    envsubst $SUB_VARS < "$KS_FILE_IN" > "$KS_FILE_OUT"
 done
 
 # Generate settings
