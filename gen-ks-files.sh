@@ -1,14 +1,37 @@
 #!/bin/sh
 
-USERS=$(ls pub-ssh-keys/)
-SERVERS="master"
 DISTRO="centos7"
+SUB_VARS='$IP:$NETMASK:$GATEWAY:$NAMESERVERS:$HOSTNAME'
+KS_IN_DIR="$(pwd)/ks"
+KS_OUT_DIR="$(pwd)/tmp/ks"
+
+USERS=$(ls users)
+
+MASTER_IDS=$(ls masters)
+NODE_IDS=$(ls nodes)
+SERVER_IDS="$MASTER_IDS $NODE_IDS"
+
+# Substitude variables
+mkdir -p $KS_OUT_DIR
+for ID in $MASTER_IDS
+do
+    . "masters/$ID"
+    KS_FILE_IN="$KS_IN_DIR/$DISTRO-master.cfg.in"
+    KS_FILE_OUT="$KS_OUT_DIR/$DISTRO-$ID.cfg"
+    envsubst < "$KS_FILE_IN" > "$KS_FILE_OUT"
+done
+for ID in $NODE_IDS
+do
+    . "nodes/$ID"
+    KS_FILE_IN="$KS_IN_DIR/$DISTRO-node.cfg.in"
+    KS_FILE_OUT="$KS_OUT_DIR/$DISTRO-$ID.cfg"
+    envsubst < "$KS_FILE_IN" > "$KS_FILE_OUT"
+done
 
 # Generate settings
-for SERVER in $SERVERS
+for ID in $SERVER_IDS
 do
-    KS_FILE=$DISTRO-$SERVER.cfg
-    cp $KS_FILE.in $KS_FILE
+    KS_FILE=$KS_OUT_DIR/$DISTRO-$ID.cfg
 
     echo "" >> $KS_FILE
     echo "#---------------#" >> $KS_FILE
@@ -18,13 +41,8 @@ do
     do
         echo "user --name=$USER" >> $KS_FILE
     done
-done
 
-# Generate post script
-for SERVER in $SERVERS
-do
-    KS_FILE=$DISTRO-$SERVER.cfg
-
+    # Generate post script
     echo "" >> $KS_FILE
     echo "#-------------#" >> $KS_FILE
     echo "# Post script #" >> $KS_FILE
@@ -37,10 +55,10 @@ do
     do
         echo "mkdir -m0700 /home/$USER/.ssh/" >> $KS_FILE
         echo "cat <<EOF > /home/$USER/.ssh/authorized_keys" >> $KS_FILE
-        cat pub-ssh-keys/$USER >> $KS_FILE
+        cat "users/$USER" >> $KS_FILE
         echo "EOF" >> $KS_FILE
         echo "cat <<EOF >> /root/.ssh/authorized_keys" >> $KS_FILE
-        cat pub-ssh-keys/$USER >> $KS_FILE
+        cat "users/$USER" >> $KS_FILE
         echo "EOF" >> $KS_FILE
         echo "chmod 0600 /home/$USER/.ssh/authorized_keys" >> $KS_FILE
         echo "chown -R $USER:$USER /home/$USER/.ssh/" >> $KS_FILE
