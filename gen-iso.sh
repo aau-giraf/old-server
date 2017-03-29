@@ -8,6 +8,7 @@ MOUNT_DIR=/mnt/iso
 TMP_DIR=$(pwd)/tmp
 BUILD_DIR=$TMP_DIR/build
 KS_DIR=$TMP_DIR/ks
+ISOLINUX_DIR=$BUILD_DIR/isolinux/
 
 # Download iso
 mkdir -p $TMP_DIR
@@ -24,11 +25,18 @@ cp -r $MOUNT_DIR/* $BUILD_DIR
 chmod -R u+w $BUILD_DIR
 sudo umount $MOUNT_DIR && sudo rmdir $MOUNT_DIR
 
-# Setup kickstar files
+# Setup kickstart isolinux entries
+ISOLINUX_CFG=$ISOLINUX_DIR/isolinux.cfg
+cp isolinux/isolinux.cfg.in $ISOLINUX_CFG
+cp isolinux/splash.png $ISOLINUX_DIR
 for KS in $(ls $KS_DIR)
 do
-    cp $KS_DIR/$KS $BUILD_DIR/isolinux/
-    sed -i "s/append\ initrd\=initrd.img/append initrd=initrd.img\ ks\=cdrom:\/$KS/" $BUILD_DIR/isolinux/isolinux.cfg
+    cp $KS_DIR/$KS $ISOLINUX_DIR
+    echo "label check" >> $ISOLINUX_CFG
+    echo "  menu label $KS" >> $ISOLINUX_CFG
+    echo "  kernel vmlinuz" >> $ISOLINUX_CFG
+    echo "  append initrd=initrd.img ks=cdrom:/$KS inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 quiet" >> $ISOLINUX_CFG
+
 done    
 
 # Generate image
