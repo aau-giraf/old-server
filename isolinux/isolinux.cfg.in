@@ -49,8 +49,8 @@ menu color timeout 0 #ffffffff #00000000 none
 menu color timeout_msg 0 #ffffffff #00000000 none
 
 # Command prompt text
-menu color cmdmark 0 #84b8ffff #00000000 none
-menu color cmdline 0 #ffffffff #00000000 none
+menu color cmdmark 0 #ff4d3900 #00000000 none
+menu color cmdline 0 #ffcc9900 #00000000 none
 
 # Do not display the actual menu unless the user presses a key. All that is displayed is a timeout message.
 
