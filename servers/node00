@@ -1,3 +1,4 @@
+export TYPE="node"
 export IP="172.19.0.233"
 export NETMASK="255.255.255.224"
 export GATEWAY="172.19.0.225"
