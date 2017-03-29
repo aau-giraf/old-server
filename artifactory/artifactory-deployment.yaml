@@ -1,0 +1,43 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: artifactory
+  labels:
+    app: artifactory
+spec:
+  selector:
+    app: artifactory
+  type: NodePort
+  clusterIP: 10.0.0.73
+  ports:
+  - port: 8080
+    nodePort: 30001
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: artifactory
+  labels:
+    app: artifactory
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: artifactory
+    spec:
+      containers:
+      - name: artifactory
+        image: mattgruter/artifactory
+        ports:
+        - name: http
+          containerPort: 8080
+        volumeMounts:
+        - name: artifactory-vol
+          mountPath: /artifactory
+          readOnly: false
+      volumes:
+        - name: artifactory-vol
+          hostPath:
+            path: "/tmp/data"
