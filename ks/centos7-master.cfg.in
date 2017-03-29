@@ -58,8 +58,9 @@ url --url="http://mirror.centos.org/centos/7/os/x86_64/"
 vim
 tmux
 yum-cron
+ntp
 %end
-services --enabled=NetworkManager,sshd,yum-cron
+services --enabled=NetworkManager,sshd,yum-cron,ntpd
 
 #------------------#
 # Network settings #
