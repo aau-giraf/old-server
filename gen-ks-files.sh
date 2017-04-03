@@ -2,8 +2,8 @@
 
 DISTRO="centos7"
 SUB_VARS='$IP:$NETMASK:$GATEWAY:$NAMESERVERS:$HOSTNAME'
-KS_IN_DIR="$(pwd)/ks"
-KS_OUT_DIR="$(pwd)/tmp/ks"
+KS_IN_DIR="$PWD/ks"
+KS_OUT_DIR="$PWD/tmp/ks"
 
 USERS=$(ls users)
 SERVER_IDS=$(ls servers)

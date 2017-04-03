@@ -5,7 +5,8 @@ ISO_NAME=CentOS-7-x86_64-NetInstall-1611
 ISO_FILE=$ISO_NAME.iso
 
 MOUNT_DIR=/mnt/iso
-TMP_DIR=$(pwd)/tmp
+WORK_DIR=$PWD
+TMP_DIR=$WORK_DIR/tmp
 BUILD_DIR=$TMP_DIR/build
 KS_DIR=$TMP_DIR/ks
 ISOLINUX_DIR=$BUILD_DIR/isolinux/
@@ -42,7 +43,7 @@ done
 # Generate image
 pushd $BUILD_DIR > /dev/null 2>&1
 mkisofs -R -J -v -T \
- -o /tmp/boot.iso \
+ -o $WORK_DIR/boot.iso \
  -b isolinux.bin -c boot.cat \
  -V 'CentOS 7 x86_64' \
  -no-emul-boot -boot-load-size 4 -boot-info-table \
