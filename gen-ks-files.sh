@@ -41,6 +41,7 @@ EOF
 # Post script #
 #-------------#
 %post
+sed -i 's/PasswordAuthentication yes/#PasswordAuthentication yes/g' /etc/ssh/sshd_config
 echo "%wheel  ALL=(ALL)   NOPASSWD: ALL" >> /etc/sudoers
 mkdir -m0700 /root/.ssh/
 touch /root/.ssh/authorized_keys
