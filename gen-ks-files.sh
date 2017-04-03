@@ -31,7 +31,7 @@ EOF
 
     for USER in $USERS
     do
-        echo "user --name=$USER" >> $KS_FILE
+        echo "user --name=$USER --groups=wheel" >> $KS_FILE
     done
 
     # Generate post script
@@ -41,6 +41,7 @@ EOF
 # Post script #
 #-------------#
 %post
+echo "%wheel  ALL=(ALL)   NOPASSWD: ALL" >> /etc/sudoers
 mkdir -m0700 /root/.ssh/
 touch /root/.ssh/authorized_keys
 chmod 0600 /root/.ssh/authorized_keys
