@@ -36,8 +36,10 @@ spec:
         volumeMounts:
         - name: artifactory-vol
           mountPath: /artifactory
-          readOnly: false
+      securityContext:
+        supplementalGroups: [100003]
+        privileged: false
       volumes:
         - name: artifactory-vol
-          hostPath:
-            path: "/tmp/data"
+          persistentVolumeClaim:
+            claimName: artifactory-pvc
