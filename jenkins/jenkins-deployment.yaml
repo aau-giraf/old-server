@@ -1,0 +1,45 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  selector:
+    app: jenkins
+  type: NodePort
+  clusterIP: 10.0.0.74
+  ports:
+  - port: 80
+    nodePort: 30002
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins
+  labels:
+    app: jenkins
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      containers:
+      - name: jenknins
+        image: giraf_jenkins
+        ports:
+        - name: http
+          containerPort: 8080
+        volumeMounts:
+        - name: jenkins-vol
+          mountPath: /var/jenkins_home
+      securityContext:
+        supplementalGroups: [100004]
+        privileged: false
+      volumes:
+        - name: jenkins-vol
+          persistentVolumeClaim:
+            claimName: jenkins-pvc
