@@ -1,9 +1,10 @@
 ---
-kind: Service
+kind: Endpoints
 apiVersion: v1
 metadata:
   name: gluster-cluster
-spec:
+subsets:
+- addresses:
+  - ip: 172.17.0.2
   ports:
   - port: 8080
-

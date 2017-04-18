@@ -15,4 +15,4 @@ spec:
     glusterfs:
       endpoints: gluster-cluster
       path: kube_vol
-      readOnly: true
+      readOnly: false
