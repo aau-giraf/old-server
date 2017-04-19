@@ -1,4 +1,6 @@
-FROM microsoft/dotnet:1.1-sdk
+FROM microsoft/dotnet:1.1.1-sdk
+
+EXPOSE 5000
 
 WORKDIR /srv
 RUN apt-get update && apt-get -y install git sqlite3 && rm -rf /var/lib/apt/lists/*
