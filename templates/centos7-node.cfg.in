@@ -60,6 +60,7 @@ vim
 tmux
 yum-cron
 ntp
+nfs-utils
 kubernetes-node 
 docker 
 flannel

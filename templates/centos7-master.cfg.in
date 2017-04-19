@@ -62,13 +62,14 @@ vim
 tmux
 yum-cron
 ntp
+nfs-utils
 cockpit 
 cockpit-kubernetes
 kubernetes-master 
 etcd 
 flannel
 %end
-services --enabled=NetworkManager,sshd,yum-cron,ntpd,cockpit,etcd,kube-apiserver,kube-controller-manager,kube-scheduler,flanneld
+services --enabled=NetworkManager,sshd,yum-cron,ntpd,cockpit,etcd,kube-apiserver,kube-controller-manager,kube-scheduler,flanneld,nfs-server
 
 #------------------#
 # Network settings #
