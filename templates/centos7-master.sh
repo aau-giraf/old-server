@@ -19,8 +19,10 @@ KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
 KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ResourceQuota"
 KUBE_API_ARGS=""
 EOF
-cat << EOF >> /etc/sysconfig/flanneld 
+cat << EOF > /etc/sysconfig/flanneld 
+FLANNEL_ETCD_ENDPOINTS="http://127.0.0.1:2379"
 FLANNEL_ETCD="http://master00:2379"
 FLANNEL_ETCD_KEY="/flannel/network/"
 EOF
+systemctl start etcd
 etcdctl mk /flannel/network/config '{"Network":"172.17.0.0/16"}'
