@@ -5,6 +5,8 @@ USER_DIR="$PWD/users"
 TMP_DIR="$PWD/tmp"
 KS_OUT_DIR="$TMP_DIR/ks"
 
+HOSTS_FILE="$TMP_DIR/hosts"
+
 USERS=$(ls $USER_DIR)
 INSTANCE_IDS=$(ls $INSTANCE_DIR)
 
@@ -18,7 +20,7 @@ SUB_VARS_SCRIPT='$ETCD_SERVER'
 mkdir -p $KS_OUT_DIR
 
 # Generate /etc/hosts
-rm $TMP_DIR/hosts 2> /dev/null || true
+echo -n "" > $HOSTS_FILE
 for ID in $INSTANCE_IDS
 do
     . "$INSTANCE_DIR/$ID"
@@ -68,6 +70,7 @@ EOF
 
     # Generate /etc/hosts
     echo "cat <<EOF >> /etc/hosts" >> $KS_FILE
+    echo "127.0.0.1 $HOSTNAME"
     cat "$TMP_DIR/hosts" >> $KS_FILE
     echo "EOF" >> $KS_FILE
 
