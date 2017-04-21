@@ -75,5 +75,5 @@ services --enabled=NetworkManager,sshd,yum-cron,ntpd,cockpit,etcd,kube-apiserver
 # Network settings #
 #------------------#
 #network --bootproto=dhcp --device=ens160 --activate
-network --bootproto=static --ip=${IP} --netmask=${NETMASK} --gateway=${GATEWAY} --nameserver=${NAMESERVERS} --onboot=on --activate 
+network --bootproto=static --ip=${IP} --netmask=${NETMASK} --gateway=${GATEWAY} --nameserver=${NAMESERVERS} --onboot=on --activate
 network --hostname=${HOSTNAME}
