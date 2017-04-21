@@ -28,9 +28,12 @@ do
     . "$INSTANCE_DIR/$ID"
     KS_FILE_IN="$TEMPLATE_DIR/$DISTRO-$TYPE.cfg.in"
     KS_FILE="$KS_OUT_DIR/$DISTRO-$ID.cfg"
+    SCRIPT_FILE_IN="$TEMPLATE_DIR/$DISTRO-$TYPE.sh.in"
+    SCRIPT_FILE="$TMP_DIR/$DISTRO-$TYPE.sh"
     
     # Generate variable settings
     envsubst $SUB_VARS < "$KS_FILE_IN" > "$KS_FILE"
+    envsubst $SUB_VARS < "$SCRIPT_FILE_IN" > "$SCRIPT_FILE"
 
     # Generate user settings
     cat >> $KS_FILE << EOF
@@ -79,7 +82,6 @@ EOF
     done
 
     # Cat ks/$DISTRO-$TYPE.sh to post script
-    SCRIPT_FILE="$TEMPLATE_DIR/$DISTRO-$TYPE.sh"
     cat $SCRIPT_FILE >> $KS_FILE
     echo "%end" >> $KS_FILE
 done
