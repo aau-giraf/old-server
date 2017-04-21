@@ -2,7 +2,8 @@
 TEMPLATE_DIR="$PWD/templates"
 INSTANCE_DIR="$PWD/instances"
 USER_DIR="$PWD/users"
-KS_OUT_DIR="$PWD/tmp/ks"
+TMP_DIR="$PWD/tmp"
+KS_OUT_DIR="$TMP_DIR/ks"
 
 USERS=$(ls $USER_DIR)
 INSTANCE_IDS=$(ls $INSTANCE_DIR)
@@ -11,6 +12,14 @@ SUB_VARS='$IP:$DISTRO:$NETMASK:$GATEWAY:$NAMESERVERS:$HOSTNAME'
 
 # Make kickstart output directory
 mkdir -p $KS_OUT_DIR
+
+# Generate /etc/hosts
+rm $TMP_DIR/hosts 2> /dev/null || true
+for ID in $INSTANCE_IDS
+do
+    . "$INSTANCE_DIR/$ID"
+    echo "$IP $HOSTNAME" >> "$TMP_DIR/hosts"
+done
 
 # For each instance
 for ID in $INSTANCE_IDS
@@ -49,6 +58,13 @@ mkdir -m0700 /root/.ssh/
 touch /root/.ssh/authorized_keys
 chmod 0600 /root/.ssh/authorized_keys
 EOF
+
+    # Generate /etc/hosts
+    echo "cat <<EOF >> /etc/hosts" >> $KS_FILE
+    cat "$TMP_DIR/hosts" >> $KS_FILE
+    echo "EOF" >> $KS_FILE
+
+    # Setup public ssh keys
     for USER in $USERS
     do
         echo "mkdir -m0700 /home/$USER/.ssh/" >> $KS_FILE
