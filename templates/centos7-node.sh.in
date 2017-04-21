@@ -1,0 +1,4 @@
+cat << EOF > /etc/sysconfig/flanneld 
+FLANNEL_ETCD_ENDPOINTS="http://${ETCD_SERVER}:2379"
+FLANNEL_ETCD_PREFIX="/flannel/network"
+EOF

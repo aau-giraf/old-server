@@ -8,7 +8,11 @@ KS_OUT_DIR="$TMP_DIR/ks"
 USERS=$(ls $USER_DIR)
 INSTANCE_IDS=$(ls $INSTANCE_DIR)
 
-SUB_VARS='$IP:$DISTRO:$NETMASK:$GATEWAY:$NAMESERVERS:$HOSTNAME'
+SUB_VARS_KS='$IP:$DISTRO:$NETMASK:$GATEWAY:$NAMESERVERS:$HOSTNAME'
+SUB_VARS_SCRIPT='$ETCD_SERVER'
+
+# Load global configuration
+. ./global-conf
 
 # Make kickstart output directory
 mkdir -p $KS_OUT_DIR
@@ -32,8 +36,8 @@ do
     SCRIPT_FILE="$TMP_DIR/$DISTRO-$TYPE.sh"
     
     # Generate variable settings
-    envsubst $SUB_VARS < "$KS_FILE_IN" > "$KS_FILE"
-    envsubst $SUB_VARS < "$SCRIPT_FILE_IN" > "$SCRIPT_FILE"
+    envsubst $SUB_VARS_KS < "$KS_FILE_IN" > "$KS_FILE"
+    envsubst $SUB_VARS_SCRIPT < "$SCRIPT_FILE_IN" > "$SCRIPT_FILE"
 
     # Generate user settings
     cat >> $KS_FILE << EOF
