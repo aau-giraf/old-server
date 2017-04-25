@@ -6,6 +6,8 @@ ENV ANDROID_SDK_URL https://dl.google.com/android/repository/tools_r25.2.3-linux
 
 RUN cd /opt && curl -o tools.zip $ANDROID_SDK_URL 
 RUN cd /opt && unzip tools.zip
+COPY intel-android-extra-license /opt/tools/licenses/intel-android-extra-license
+COPY android-sdk-license /opt/tools/licenses/android-sdk-license
 
 ENV ANDROID_HOME /opt/tools
 ENV PATH $PATH:$ANDROID_HOME/
