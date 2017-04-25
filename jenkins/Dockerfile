@@ -13,6 +13,6 @@ COPY jobs /var/jenkins_home/jobs
 ENV ANDROID_HOME /opt/tools
 ENV PATH $PATH:$ANDROID_HOME/
 
-RUN android update sdk --no-ui
+RUN echo y | android update sdk --no-ui
 
 COPY config.xml /var/jenkins_home/config.xml
