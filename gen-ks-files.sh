@@ -14,7 +14,7 @@ SUB_VARS_KS='$IP:$DISTRO:$NETMASK:$GATEWAY:$NAMESERVERS:$HOSTNAME'
 SUB_VARS_SCRIPT='$ETCD_SERVER'
 
 # Load global configuration
-. ./global-conf
+. ./global-conf.sh
 
 # Make kickstart output directory
 mkdir -p $KS_OUT_DIR
