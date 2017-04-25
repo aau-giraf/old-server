@@ -1,0 +1,12 @@
+commit 1449f1e86bfcd5144ca49b54c22caf86743ec3f5
+tree ae1f6efacf8b4402ada14d8ed808520f99feeeb4
+parent e82112819d5372f6234ada21ae2046bdda9775a5
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-12 11:51:24 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-12 11:51:24 +0200
+
+    Use shared Artifactory script
+
+
+
+:100644 100644 2b22ff3ab74e4e9f4a67d60270ec95e230af0712 8edd46b3b911b3b801dadd8044ce7c083824d78e M	build.gradle
+:100644 100644 6d0ab6795b2dc39db4d9bd6e938535b1bb37ec92 43afcbdfb19aeba583b6f1826e340431fd24a772 M	gradle.properties

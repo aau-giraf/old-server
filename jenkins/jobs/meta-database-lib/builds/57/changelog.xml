@@ -1,0 +1,23 @@
+commit cc2c7401a052ccd4f5c38041fb1dda76d56083e6
+tree 4a419b40ceaed2d7de12020c58572df6c85e1224
+parent 2b02fbc939a764a82cfa14bc3c6516a5c2865634
+author Christoffer Mourtizen <cmouri14@student.aau.dk> 2017-04-18 12:03:46 +0200
+committer Christoffer Mourtizen <cmouri14@student.aau.dk> 2017-04-18 12:03:46 +0200
+
+    Fix for publish without classes!
+
+
+
+:100644 100644 4b95b7f9f55a72675acdd39e00cfbc5ff2662b90 5ec3f217cbec5bad7978afff014c08126d1d8d7f M	build.gradle
+:100644 100644 122a0dca2e800b3ccf474321fc5e63551f507d29 9bc038a55d4efb078e9ee7b9af7f92fd8b259312 M	gradle/wrapper/gradle-wrapper.properties
+commit 2b02fbc939a764a82cfa14bc3c6516a5c2865634
+tree cb7e4d2e39bc4b0e726510f821a06468764792e8
+parent 1449f1e86bfcd5144ca49b54c22caf86743ec3f5
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-12 12:20:04 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-12 12:20:04 +0200
+
+    Use newer version of buildinfo
+
+
+
+:100644 100644 8edd46b3b911b3b801dadd8044ce7c083824d78e 4b95b7f9f55a72675acdd39e00cfbc5ff2662b90 M	build.gradle

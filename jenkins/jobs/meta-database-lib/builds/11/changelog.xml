@@ -1,0 +1,11 @@
+commit ed91132675fe72b5616f99053cf529512e70f167
+tree 048ecffa702529b9284f67b0ecf137995f8c94ae
+parent e8fcc0011305bda8b5ef7bb4785316b1795d9b22
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-06 15:03:33 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-06 15:03:33 +0200
+
+    Downgrade build-info-extractor-gradle to 3.x
+
+
+
+:100644 100644 f673df7ac03e6e4b0a4df72fd7044f94cb0cdc33 676ce12625dfc70162a8c5ae25980cdde884b46f M	build.gradle

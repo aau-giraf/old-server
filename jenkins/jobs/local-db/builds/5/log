@@ -1,0 +1,34 @@
+Started by user [8mha:////4K1p1rR9P8/UcvUAWjx2SgDV6Kg3oG0J5rwZcmxW5g1LAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZZ/dLi1CL9tLL8nJQkQxOH4pLSlNS8Er3ExFK9lGwAmrOAjtIAAAA=[0mfvoldb14@student.aau.dk
+Building in workspace /var/jenkins_home/workspace/local-db
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/local-db.git # timeout=10
+Fetching upstream changes from http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/local-db.git
+ > git --version # timeout=10
+ > git fetch --tags --progress http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/local-db.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 828f843d496c26ba57cd031782f8e8ed28f2b037 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 828f843d496c26ba57cd031782f8e8ed28f2b037
+ > git rev-list d2698e2bae698478a54a0b8c67c12e2d9dc5848f # timeout=10
+Jenkins Artifactory Plugin version: 2.10.3
+[Gradle] - Launching build.
+[local-db] $ /var/jenkins_home/workspace/local-db/gradlew artifactoryPublish
+Version is 1.0-SNAPSHOT
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'local-db'.
+> failed to find target with hash string 'android-23' in: /opt/tools
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+[8mha:////4FwoyfhOzOx9WouJNXTqt3xtCn4HUWNK6W5sjcw5b4LUAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpBabBRd0uewzZWJgqChikILqSs7PK84HKneG0CCFDBDACFJYAAAMk/XNZQAAAA==[0mBUILD FAILED
+
+Total time: 12.498 secs
+Build step 'Invoke Gradle script' changed build result to FAILURE
+Build step 'Invoke Gradle script' marked build as failure
+Finished: FAILURE

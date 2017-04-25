@@ -8,6 +8,7 @@ RUN cd /opt && curl -o tools.zip $ANDROID_SDK_URL
 RUN cd /opt && unzip tools.zip
 COPY intel-android-extra-license /opt/tools/licenses/intel-android-extra-license
 COPY android-sdk-license /opt/tools/licenses/android-sdk-license
+COPY jobs /var/jenkins_home/jobs
 
 ENV ANDROID_HOME /opt/tools
 ENV PATH $PATH:$ANDROID_HOME/

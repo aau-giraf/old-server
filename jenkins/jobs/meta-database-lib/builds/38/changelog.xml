@@ -1,0 +1,11 @@
+commit d8773c295d32e767bf5816d0f17c0f3111752727
+tree a47b11aa4201da42ef0b11fb19e7a5f04f50668d
+parent b1c9c6c919be00580f94843daddd807bd27bc6b3
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:33:42 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:33:42 +0200
+
+    Fix my life #10
+
+
+
+:100644 100644 a5bab4ee0bbd07c288de1c4d49800665044c40e7 1e09982e4cbe22e08fbaacef401d33d04541db59 M	gradle.properties

@@ -1,0 +1,45 @@
+commit 828f843d496c26ba57cd031782f8e8ed28f2b037
+tree 9501f12623606307dc40b7080007d43adc1a05cc
+parent 193192e49548a808d643df232eb3de2c8dff9468
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-12 13:37:12 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-12 13:37:12 +0200
+
+    Use newer version of buildinfo
+
+
+
+:100644 100644 da1b0565082446b3dcb97ed89bbd39cb0f45fa3f 8ba34e4cf6d17bf8d4004bda7519600ce098dd91 M	build.gradle
+commit 193192e49548a808d643df232eb3de2c8dff9468
+tree 3a025b643f57ff079d58edafd7d7e802b549d339
+parent 0760f4f38b859d548e873b54258d17ea1ffc8f6d
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-12 11:50:45 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-12 11:50:45 +0200
+
+    Use shared Artifactory script
+
+
+
+:100644 100644 994be20cdf2558fcff09949e89549ad3c46c92d8 da1b0565082446b3dcb97ed89bbd39cb0f45fa3f M	build.gradle
+:100644 100644 6d0ab6795b2dc39db4d9bd6e938535b1bb37ec92 43afcbdfb19aeba583b6f1826e340431fd24a772 M	gradle.properties
+commit 0760f4f38b859d548e873b54258d17ea1ffc8f6d
+tree 6bb5cdc3b9da82f5bc0bf44da0eb852816bdf99a
+parent d2698e2bae698478a54a0b8c67c12e2d9dc5848f
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-11 11:53:12 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-11 11:53:12 +0200
+
+    Make Gradle Artifactory plugin work
+
+
+
+:100644 100644 a0ada380d49b9f44bead798bfba0274a32c0d524 994be20cdf2558fcff09949e89549ad3c46c92d8 M	build.gradle
+:100644 100644 c36a24616298c36c5f5728f63894ae9bf7b45335 551f1f7cc71b43a699698a377528d94002072214 M	src/main/java/dk/aau/cs/giraf/localdb/DownloadAll.java
+:100644 100644 a0e935c7ba1bbdf8d6ab59b655c61f6b1eac0173 5ce26a283dc1b8595f5127c9a74c6eac97f49e69 M	src/main/java/dk/aau/cs/giraf/localdb/DownloadService.java
+:100644 100644 124212f099060fb195606a322c484b57c19229be 5051f064b276d9aef1c8b3643b274878033137a2 M	src/main/java/dk/aau/cs/giraf/localdb/main.java
+:000000 100644 0000000000000000000000000000000000000000 96832b36427bd04a1ea5e78a59f3d7f0d8dbca8b A	src/main/java/dk/aau/cs/giraf/metadata/AdminOfTable.java
+:000000 100644 0000000000000000000000000000000000000000 4ee6283385bd6f534b1d81099f178d7d579ae5dd A	src/main/java/dk/aau/cs/giraf/metadata/DatabaseCredentials.java
+:000000 100644 0000000000000000000000000000000000000000 f1a64729c5023b6e8192827017ff078995ebdda6 A	src/main/java/dk/aau/cs/giraf/metadata/DatabaseTables.java
+:000000 100644 0000000000000000000000000000000000000000 c545c9b224c8bb5abac5efef26b44e0902bae7c4 A	src/main/java/dk/aau/cs/giraf/metadata/ExportDefinition.java
+:000000 100644 0000000000000000000000000000000000000000 f961f657046b0fc7adb942941c831dc8d65cc98b A	src/main/java/dk/aau/cs/giraf/metadata/GuardianOfTable.java
+:000000 100644 0000000000000000000000000000000000000000 5d4e4e069753f1bcc00d7917943ff06eaff27ea9 A	src/main/java/dk/aau/cs/giraf/metadata/LastSyncTable.java
+:000000 100644 0000000000000000000000000000000000000000 3d5cd0e62846ca79c4c30aef99176d1e97f12f41 A	src/main/java/dk/aau/cs/giraf/metadata/SingleRowExport.java
+:000000 100644 0000000000000000000000000000000000000000 9cd11ae33fbf774e6e58a34d0fed5fe48c164813 A	src/main/java/dk/aau/cs/giraf/metadata/TableExport.java

@@ -1,0 +1,46 @@
+Started by user [8mha:////4K1p1rR9P8/UcvUAWjx2SgDV6Kg3oG0J5rwZcmxW5g1LAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZZ/dLi1CL9tLL8nJQkQxOH4pLSlNS8Er3ExFK9lGwAmrOAjtIAAAA=[0mfvoldb14@student.aau.dk
+Building in workspace /var/jenkins_home/workspace/weekplanner
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url http://git.giraf.cs.aau.dk/Giraf17-AndroidApps/weekday-planner.git # timeout=10
+Fetching upstream changes from http://git.giraf.cs.aau.dk/Giraf17-AndroidApps/weekday-planner.git
+ > git --version # timeout=10
+ > git fetch --tags --progress http://git.giraf.cs.aau.dk/Giraf17-AndroidApps/weekday-planner.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 27233486068c1398c5befbb483ecb13ea92e564a (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 27233486068c1398c5befbb483ecb13ea92e564a
+ > git rev-list 27233486068c1398c5befbb483ecb13ea92e564a # timeout=10
+Jenkins Artifactory Plugin version: 2.10.3
+[Gradle] - Launching build.
+[weekplanner] $ /var/jenkins_home/workspace/weekplanner/gradlew -DVERSION=1.0-SNAPSHOT artifactoryPublish
+Starting a Gradle Daemon (subsequent builds will be faster)
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to /opt/tools/ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+File /root/.android/repositories.cfg could not be loaded.
+Checking the license for package Android SDK Build-Tools 25.0.2 in /opt/tools/licenses
+Warning: License for package Android SDK Build-Tools 25.0.2 not accepted.
+Checking the license for package Android SDK Platform 23 in /opt/tools/licenses
+Warning: License for package Android SDK Platform 23 not accepted.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'weekplanner'.
+> You have not accepted the license agreements of the following SDK components:
+  [Android SDK Build-Tools 25.0.2, Android SDK Platform 23].
+  Before building your project, you need to accept the license agreements and complete the installation of the missing components using the Android Studio SDK Manager.
+  Alternatively, to learn how to transfer the license agreements from one workstation to another, go to http://d.android.com/r/studio-ui/export-licenses.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+[8mha:////4FwoyfhOzOx9WouJNXTqt3xtCn4HUWNK6W5sjcw5b4LUAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpBabBRd0uewzZWJgqChikILqSs7PK84HKneG0CCFDBDACFJYAAAMk/XNZQAAAA==[0mBUILD FAILED
+
+Total time: 12.709 secs
+Build step 'Invoke Gradle script' changed build result to FAILURE
+Build step 'Invoke Gradle script' marked build as failure
+Finished: FAILURE

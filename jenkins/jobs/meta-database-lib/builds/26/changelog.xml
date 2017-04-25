@@ -1,0 +1,11 @@
+commit da0f5d611a4fe3f5bb466f4a128aa4b88b723228
+tree c1f691b6ebb53f78f9d6889167295f2246541d35
+parent 57642310046b35b11445b95aa81ac30be46592e6
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:13:50 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:13:50 +0200
+
+    Fix Artifactory Gradle version naming
+
+
+
+:100644 100644 8b82b78d5b8a3055fbb7343004c58193d40d1ada aeb458e205a976a2ba6ec1f5e6f01621d698b1ce M	gradle.properties

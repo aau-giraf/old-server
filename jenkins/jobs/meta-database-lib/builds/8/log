@@ -1,0 +1,92 @@
+Started by user [8mha:////4NmSnY5hFSa2v+4DK/6XqFyKRT2cvWd/ZyNOGusI2m2lAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZZ/dLi1CL9vPyy1KIkQxOH4pLSlNS8Er3ExFK9lGwA1L1LDtIAAAA=[0mnoverb14@student.aau.dk
+Building in workspace /var/jenkins_home/workspace/meta-database-lib
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git # timeout=10
+Fetching upstream changes from http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git
+ > git --version # timeout=10
+ > git -c core.askpass=true fetch --tags --progress http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/maven-test^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/maven-test^{commit} # timeout=10
+Checking out Revision e8fcc0011305bda8b5ef7bb4785316b1795d9b22 (refs/remotes/origin/maven-test)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e8fcc0011305bda8b5ef7bb4785316b1795d9b22
+ > git rev-list c4b0e1007ce0c6f2747b75f3fed5e7651be18b1e # timeout=10
+[Gradle] - Launching build.
+[meta-database-lib] $ /var/jenkins_home/workspace/meta-database-lib/gradlew --init-script /tmp/init-artifactory7589481888635277047gradle publish artifactoryPublish
+Download https://jcenter.bintray.com/org/jfrog/buildinfo/build-info-extractor-gradle/4.4.15/build-info-extractor-gradle-4.4.15.pom
+Download https://jcenter.bintray.com/org/apache/ivy/ivy/2.2.0/ivy-2.2.0.pom
+Download https://jcenter.bintray.com/org/apache/apache/7/apache-7.pom
+Download https://jcenter.bintray.com/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/5/commons-parent-5.pom
+Download https://jcenter.bintray.com/org/apache/apache/4/apache-4.pom
+Download https://jcenter.bintray.com/commons-io/commons-io/2.2/commons-io-2.2.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/24/commons-parent-24.pom
+Download https://jcenter.bintray.com/org/apache/apache/9/apache-9.pom
+Download https://jcenter.bintray.com/org/codehaus/groovy/groovy-all/2.4.7/groovy-all-2.4.7.pom
+Download https://jcenter.bintray.com/commons-lang/commons-lang/2.4/commons-lang-2.4.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/9/commons-parent-9.pom
+Download https://jcenter.bintray.com/org/jfrog/buildinfo/build-info-extractor/2.7.5/build-info-extractor-2.7.5.pom
+Download https://jcenter.bintray.com/org/jfrog/buildinfo/build-info-client/2.7.5/build-info-client-2.7.5.pom
+Download https://jcenter.bintray.com/com/google/guava/guava/18.0/guava-18.0.pom
+Download https://jcenter.bintray.com/com/google/guava/guava-parent/18.0/guava-parent-18.0.pom
+Download https://jcenter.bintray.com/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+Download https://jcenter.bintray.com/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.pom
+Download https://jcenter.bintray.com/com/thoughtworks/xstream/xstream-parent/1.3.1/xstream-parent-1.3.1.pom
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.8/commons-codec-1.8.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/28/commons-parent-28.pom
+Download https://jcenter.bintray.com/org/apache/apache/13/apache-13.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-client/4.5.2/httpcomponents-client-4.5.2.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/project/7/project-7.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.4.5/httpcore-4.4.5.pom
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcomponents-core/4.4.5/httpcomponents-core-4.4.5.pom
+Download https://jcenter.bintray.com/org/jfrog/buildinfo/build-info-api/2.7.5/build-info-api-2.7.5.pom
+Download https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-core/2.8.1/jackson-core-2.8.1.pom
+Download https://jcenter.bintray.com/com/fasterxml/jackson/jackson-parent/2.8/jackson-parent-2.8.pom
+Download https://jcenter.bintray.com/com/fasterxml/oss-parent/27/oss-parent-27.pom
+Download https://jcenter.bintray.com/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.pom
+Download https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-databind/2.8.1/jackson-databind-2.8.1.pom
+Download https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.pom
+Download https://jcenter.bintray.com/commons-logging/commons-logging/1.2/commons-logging-1.2.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/34/commons-parent-34.pom
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.9/commons-codec-1.9.pom
+Download https://jcenter.bintray.com/org/apache/commons/commons-parent/32/commons-parent-32.pom
+Download https://jcenter.bintray.com/org/jfrog/buildinfo/build-info-extractor-gradle/4.4.15/build-info-extractor-gradle-4.4.15.jar
+Download https://jcenter.bintray.com/org/apache/ivy/ivy/2.2.0/ivy-2.2.0.jar
+Download https://jcenter.bintray.com/commons-io/commons-io/2.2/commons-io-2.2.jar
+Download https://jcenter.bintray.com/org/codehaus/groovy/groovy-all/2.4.7/groovy-all-2.4.7.jar
+Download https://jcenter.bintray.com/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
+Download https://jcenter.bintray.com/org/jfrog/buildinfo/build-info-extractor/2.7.5/build-info-extractor-2.7.5.jar
+Download https://jcenter.bintray.com/org/jfrog/buildinfo/build-info-client/2.7.5/build-info-client-2.7.5.jar
+Download https://jcenter.bintray.com/com/google/guava/guava/18.0/guava-18.0.jar
+Download https://jcenter.bintray.com/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar
+Download https://jcenter.bintray.com/org/apache/httpcomponents/httpcore/4.4.5/httpcore-4.4.5.jar
+Download https://jcenter.bintray.com/org/jfrog/buildinfo/build-info-api/2.7.5/build-info-api-2.7.5.jar
+Download https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-core/2.8.1/jackson-core-2.8.1.jar
+Download https://jcenter.bintray.com/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar
+Download https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-databind/2.8.1/jackson-databind-2.8.1.jar
+Download https://jcenter.bintray.com/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar
+Download https://jcenter.bintray.com/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+Download https://jcenter.bintray.com/commons-codec/commons-codec/1.9/commons-codec-1.9.jar
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/var/jenkins_home/workspace/meta-database-lib/build.gradle' line: 13
+
+* What went wrong:
+A problem occurred evaluating root project 'meta-database'.
+> Failed to apply plugin [id 'com.jfrog.artifactory']
+   > Cannot cast object 'org.jfrog.gradle.plugin.artifactory.dsl.ArtifactoryPluginConvention@307e4c44' with class 'org.jfrog.gradle.plugin.artifactory.dsl.ArtifactoryPluginConvention' to class 'org.jfrog.gradle.plugin.artifactory.dsl.ArtifactoryPluginConvention'
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+[8mha:////4FwoyfhOzOx9WouJNXTqt3xtCn4HUWNK6W5sjcw5b4LUAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpBabBRd0uewzZWJgqChikILqSs7PK84HKneG0CCFDBDACFJYAAAMk/XNZQAAAA==[0mBUILD FAILED
+
+Total time: 54.493 secs
+Build step 'Invoke Gradle script' changed build result to FAILURE
+Build step 'Invoke Gradle script' marked build as failure
+Finished: FAILURE

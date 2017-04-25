@@ -1,0 +1,41 @@
+Started by user [8mha:////4NmSnY5hFSa2v+4DK/6XqFyKRT2cvWd/ZyNOGusI2m2lAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZZ/dLi1CL9vPyy1KIkQxOH4pLSlNS8Er3ExFK9lGwA1L1LDtIAAAA=[0mnoverb14@student.aau.dk
+Building in workspace /var/jenkins_home/workspace/meta-database-lib
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git # timeout=10
+Fetching upstream changes from http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git
+ > git --version # timeout=10
+ > git -c core.askpass=true fetch --tags --progress http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/maven-test^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/maven-test^{commit} # timeout=10
+Checking out Revision ed91132675fe72b5616f99053cf529512e70f167 (refs/remotes/origin/maven-test)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ed91132675fe72b5616f99053cf529512e70f167
+ > git rev-list ed91132675fe72b5616f99053cf529512e70f167 # timeout=10
+[Gradle] - Launching build.
+[meta-database-lib] $ /var/jenkins_home/workspace/meta-database-lib/gradlew artifactoryPublish
+[buildinfo] Not using buildInfo properties file for this build.
+[8mha:////4AC3/QH3QA2CAdE6s46inEiLQAXIiu50+0vrcQiGpSKMAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpC7zV766aHPULSYGhooiBimoluT8vOJ8oFpnCA1SyAABjCCFBQDX67qaYgAAAA==[0m:generatePomFileForMavenJavaPublication
+[8mha:////4AC3/QH3QA2CAdE6s46inEiLQAXIiu50+0vrcQiGpSKMAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpC7zV766aHPULSYGhooiBimoluT8vOJ8oFpnCA1SyAABjCCFBQDX67qaYgAAAA==[0m:compileJava UP-TO-DATE
+[8mha:////4AC3/QH3QA2CAdE6s46inEiLQAXIiu50+0vrcQiGpSKMAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpC7zV766aHPULSYGhooiBimoluT8vOJ8oFpnCA1SyAABjCCFBQDX67qaYgAAAA==[0m:processResources UP-TO-DATE
+[8mha:////4AC3/QH3QA2CAdE6s46inEiLQAXIiu50+0vrcQiGpSKMAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpC7zV766aHPULSYGhooiBimoluT8vOJ8oFpnCA1SyAABjCCFBQDX67qaYgAAAA==[0m:classes UP-TO-DATE
+[8mha:////4AC3/QH3QA2CAdE6s46inEiLQAXIiu50+0vrcQiGpSKMAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpC7zV766aHPULSYGhooiBimoluT8vOJ8oFpnCA1SyAABjCCFBQDX67qaYgAAAA==[0m:jar
+[8mha:////4AC3/QH3QA2CAdE6s46inEiLQAXIiu50+0vrcQiGpSKMAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpC7zV766aHPULSYGhooiBimoluT8vOJ8oFpnCA1SyAABjCCFBQDX67qaYgAAAA==[0m:artifactoryPublish
+Deploying artifact: http://jenkins.giraf.cs.aau.dk:8080/artifactory/libs-snapshot-local/dk/aau/cs/giraf/meta-database/1.0-SNAPSHOT/meta-database-1.0-SNAPSHOT.pom
+[8mha:////4AC3/QH3QA2CAdE6s46inEiLQAXIiu50+0vrcQiGpSKMAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpC7zV766aHPULSYGhooiBimoluT8vOJ8oFpnCA1SyAABjCCFBQDX67qaYgAAAA==[0m:artifactoryPublish FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':artifactoryPublish'.
+> java.io.IOException: Failed to deploy file: HTTP response code: 401. HTTP response message: Unauthorized
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+[8mha:////4FwoyfhOzOx9WouJNXTqt3xtCn4HUWNK6W5sjcw5b4LUAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpBabBRd0uewzZWJgqChikILqSs7PK84HKneG0CCFDBDACFJYAAAMk/XNZQAAAA==[0mBUILD FAILED
+
+Total time: 4.746 secs
+Build step 'Invoke Gradle script' changed build result to FAILURE
+Build step 'Invoke Gradle script' marked build as failure
+Finished: FAILURE

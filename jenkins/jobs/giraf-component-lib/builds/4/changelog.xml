@@ -1,0 +1,11 @@
+commit 89e32c980f9ea97b949ce777912a36e9c68c385f
+tree f343805422a97419837644f67cf8f87a0458c306
+parent 9a88b9b8f54a57430e3abd3c4178f33ae1605988
+author Frederik Palmelund Voldby <frederik.palmelund@gmail.com> 2017-04-25 11:21:11 +0200
+committer Frederik Palmelund Voldby <frederik.palmelund@gmail.com> 2017-04-25 11:21:11 +0200
+
+    updated gradle file
+
+
+
+:100644 100644 9dc5dbcbd023dbbbcf43315fcd60ead9ac46ba4a abe01a2490c6b5320c98a073f9bbff0659548635 M	build.gradle

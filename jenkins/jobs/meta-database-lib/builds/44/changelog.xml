@@ -1,0 +1,11 @@
+commit 577d8b35cf19e2fc2e69c08a9c3e29a706b69583
+tree 231e31fe450de36274a23e8160607cf689627c88
+parent 30dbc17a5571587885558595a1f2ec0d5df0ac48
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:41:29 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:41:29 +0200
+
+    Fix my life #13
+
+
+
+:100644 100644 8ab783f370fc0edc128f4ff6c4d62bb15c0c45a5 201b064d966645590613dc68454b67ae87a13a49 M	build.gradle

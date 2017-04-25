@@ -1,0 +1,34 @@
+Started by user [8mha:////4K1p1rR9P8/UcvUAWjx2SgDV6Kg3oG0J5rwZcmxW5g1LAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZZ/dLi1CL9tLL8nJQkQxOH4pLSlNS8Er3ExFK9lGwAmrOAjtIAAAA=[0mfvoldb14@student.aau.dk
+Building in workspace /var/jenkins_home/workspace/meta-database-lib
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git # timeout=10
+Fetching upstream changes from http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git
+ > git --version # timeout=10
+ > git fetch --tags --progress http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git +refs/heads/*:refs/remotes/origin/*
+ERROR: Error fetching remote repo 'origin'
+[8mha:////4LWr6WKokeMxFif3tpzH62wzDQ2dXqsXDwi/uXAhkWV/AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mhudson.plugins.git.GitException: Failed to fetch from http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git
+	at hudson.plugins.git.GitSCM.fetchFrom(GitSCM.java:806)
+	at hudson.plugins.git.GitSCM.retrieveChanges(GitSCM.java:1070)
+	at hudson.plugins.git.GitSCM.checkout(GitSCM.java:1101)
+	at hudson.scm.SCM.checkout(SCM.java:495)
+	at hudson.model.AbstractProject.checkout(AbstractProject.java:1278)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.defaultCheckout(AbstractBuild.java:604)
+	at jenkins.scm.SCMCheckoutStrategy.checkout(SCMCheckoutStrategy.java:86)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:529)
+	at hudson.model.Run.execute(Run.java:1728)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:404)
+Caused by: hudson.plugins.git.GitException: Command "git fetch --tags --progress http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git +refs/heads/*:refs/remotes/origin/*" returned status code 128:
+stdout: 
+stderr: fatal: unable to access 'http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git/': Failed to connect to git.giraf.cs.aau.dk port 80: Connection timed out
+
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:1799)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandWithCredentials(CliGitAPIImpl.java:1525)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.access$300(CliGitAPIImpl.java:65)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl$1.execute(CliGitAPIImpl.java:316)
+	at hudson.plugins.git.GitSCM.fetchFrom(GitSCM.java:804)
+	... 11 more
+ERROR: null
+[8mha:////4LWr6WKokeMxFif3tpzH62wzDQ2dXqsXDwi/uXAhkWV/AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mFinished: FAILURE

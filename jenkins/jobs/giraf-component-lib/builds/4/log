@@ -1,0 +1,430 @@
+Started by user [8mha:////4K1p1rR9P8/UcvUAWjx2SgDV6Kg3oG0J5rwZcmxW5g1LAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZZ/dLi1CL9tLL8nJQkQxOH4pLSlNS8Er3ExFK9lGwAmrOAjtIAAAA=[0mfvoldb14@student.aau.dk
+Building in workspace /var/jenkins_home/workspace/giraf-component-lib
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/giraf-component-lib.git # timeout=10
+Fetching upstream changes from http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/giraf-component-lib.git
+ > git --version # timeout=10
+ > git fetch --tags --progress http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/giraf-component-lib.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 89e32c980f9ea97b949ce777912a36e9c68c385f (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 89e32c980f9ea97b949ce777912a36e9c68c385f
+ > git rev-list 9a88b9b8f54a57430e3abd3c4178f33ae1605988 # timeout=10
+Jenkins Artifactory Plugin version: 2.10.3
+[Gradle] - Launching build.
+[giraf-component-lib] $ /var/jenkins_home/workspace/giraf-component-lib/gradlew -DVERSION=1.0-SNAPSHOT artifactoryPublish
+Version is 1.0-SNAPSHOT
+[buildinfo] Properties file found at '/tmp/buildInfo2645594938258610620.properties'
+[8mha:////4CZl4ZiQ+PyWwWDKvENHfCrUXrsxjTLCvcp1vCXylcQtAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:generatePomFileForArtifactsPublication
+[8mha:////4CZl4ZiQ+PyWwWDKvENHfCrUXrsxjTLCvcp1vCXylcQtAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:3: error: package android.app does not exist
+import android.app.ActionBar;
+                  ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:4: error: package android.content does not exist
+import android.content.Context;
+                      ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:5: error: package android.content does not exist
+import android.content.Intent;
+                      ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:6: error: package android.content.pm does not exist
+import android.content.pm.PackageInfo;
+                         ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:7: error: package android.content.pm does not exist
+import android.content.pm.PackageManager;
+                         ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:8: error: package android.os does not exist
+import android.os.Build;
+                 ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:9: error: package android.os does not exist
+import android.os.Bundle;
+                 ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:10: error: package android.support.v4.app does not exist
+import android.support.v4.app.FragmentActivity;
+                             ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:11: error: package android.util does not exist
+import android.util.AttributeSet;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:12: error: package android.util does not exist
+import android.util.Log;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:13: error: package android.util does not exist
+import android.util.TypedValue;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:14: error: package android.view does not exist
+import android.view.Gravity;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:15: error: package android.view does not exist
+import android.view.View;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:16: error: package android.view does not exist
+import android.view.ViewGroup;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:17: error: package android.widget does not exist
+import android.widget.LinearLayout;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:18: error: package android.widget does not exist
+import android.widget.RelativeLayout;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:19: error: package android.widget does not exist
+import android.widget.TextView;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:20: error: package android.widget does not exist
+import android.widget.Toast;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:22: error: package com.google.analytics.tracking.android does not exist
+import com.google.analytics.tracking.android.GoogleAnalytics;
+                                            ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:23: error: package com.google.analytics.tracking.android does not exist
+import com.google.analytics.tracking.android.MapBuilder;
+                                            ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:24: error: package com.google.analytics.tracking.android does not exist
+import com.google.analytics.tracking.android.StandardExceptionParser;
+                                            ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:25: error: package com.google.analytics.tracking.android does not exist
+import com.google.analytics.tracking.android.Tracker;
+                                            ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:27: error: cannot find symbol
+import dk.aau.cs.giraf.gui.R;
+                          ^
+  symbol:   class R
+  location: package dk.aau.cs.giraf.gui
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:37: error: cannot find symbol
+public class GirafActivity extends FragmentActivity {
+                                   ^
+  symbol: class FragmentActivity
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:43: error: cannot find symbol
+    private ActionBar actionBar; // The action bar of the activity
+            ^
+  symbol:   class ActionBar
+  location: class GirafActivity
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:44: error: cannot find symbol
+    private RelativeLayout actionBarCustomView; // The custom action bar view
+            ^
+  symbol:   class RelativeLayout
+  location: class GirafActivity
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:94: error: cannot find symbol
+    private class LeftActionBarLayout extends LinearLayout {
+                                              ^
+  symbol:   class LinearLayout
+  location: class GirafActivity
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:56: error: cannot find symbol
+    private class RightActionBarLayout extends LinearLayout {
+                                               ^
+  symbol:   class LinearLayout
+  location: class GirafActivity
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:47: error: cannot find symbol
+    private TextView actionBarTitleView; // The view to contain the title of the action bar
+            ^
+  symbol:   class TextView
+  location: class GirafActivity
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:126: error: cannot find symbol
+    protected void onCreate(final Bundle savedInstanceState) {
+                                  ^
+  symbol:   class Bundle
+  location: class GirafActivity
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:3: error: package android.content does not exist
+import android.content.Context;
+                      ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:4: error: package android.content.res does not exist
+import android.content.res.TypedArray;
+                          ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:5: error: package android.graphics.drawable does not exist
+import android.graphics.drawable.Drawable;
+                                ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:6: error: package android.util does not exist
+import android.util.AttributeSet;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:7: error: package android.util does not exist
+import android.util.TypedValue;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:8: error: package android.view does not exist
+import android.view.Gravity;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:9: error: package android.view does not exist
+import android.view.LayoutInflater;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:10: error: package android.view does not exist
+import android.view.MotionEvent;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:11: error: package android.view does not exist
+import android.view.View;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:12: error: package android.view does not exist
+import android.view.ViewGroup;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:13: error: package android.widget does not exist
+import android.widget.Checkable;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:14: error: package android.widget does not exist
+import android.widget.ImageView;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:15: error: package android.widget does not exist
+import android.widget.LinearLayout;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:16: error: package android.widget does not exist
+import android.widget.TextView;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:39: error: cannot find symbol
+public class GirafButton extends LinearLayout implements Checkable {
+                                 ^
+  symbol: class LinearLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:39: error: cannot find symbol
+public class GirafButton extends LinearLayout implements Checkable {
+                                                         ^
+  symbol: class Checkable
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:285: error: cannot find symbol
+    private View createActionBarView() {
+            ^
+  symbol:   class View
+  location: class GirafActivity
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:96: error: cannot find symbol
+        public LeftActionBarLayout(Context context) {
+                                   ^
+  symbol:   class Context
+  location: class GirafActivity.LeftActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:100: error: cannot find symbol
+        public LeftActionBarLayout(Context context, AttributeSet attrs) {
+                                   ^
+  symbol:   class Context
+  location: class GirafActivity.LeftActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:100: error: cannot find symbol
+        public LeftActionBarLayout(Context context, AttributeSet attrs) {
+                                                    ^
+  symbol:   class AttributeSet
+  location: class GirafActivity.LeftActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:104: error: cannot find symbol
+        public LeftActionBarLayout(Context context, AttributeSet attrs, int defStyle) {
+                                   ^
+  symbol:   class Context
+  location: class GirafActivity.LeftActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:104: error: cannot find symbol
+        public LeftActionBarLayout(Context context, AttributeSet attrs, int defStyle) {
+                                                    ^
+  symbol:   class AttributeSet
+  location: class GirafActivity.LeftActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:58: error: cannot find symbol
+        public RightActionBarLayout(Context context) {
+                                    ^
+  symbol:   class Context
+  location: class GirafActivity.RightActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:63: error: cannot find symbol
+        public RightActionBarLayout(Context context, AttributeSet attrs) {
+                                    ^
+  symbol:   class Context
+  location: class GirafActivity.RightActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:63: error: cannot find symbol
+        public RightActionBarLayout(Context context, AttributeSet attrs) {
+                                                     ^
+  symbol:   class AttributeSet
+  location: class GirafActivity.RightActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:68: error: cannot find symbol
+        public RightActionBarLayout(Context context, AttributeSet attrs, int defStyle) {
+                                    ^
+  symbol:   class Context
+  location: class GirafActivity.RightActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafActivity.java:68: error: cannot find symbol
+        public RightActionBarLayout(Context context, AttributeSet attrs, int defStyle) {
+                                                     ^
+  symbol:   class AttributeSet
+  location: class GirafActivity.RightActionBarLayout
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:41: error: package LinearLayout does not exist
+    private LinearLayout.LayoutParams textViewParams;
+                        ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:44: error: cannot find symbol
+    private Drawable icon;
+            ^
+  symbol:   class Drawable
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:46: error: cannot find symbol
+    private TextView textView;
+            ^
+  symbol:   class TextView
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:47: error: cannot find symbol
+    private ImageView iconView;
+            ^
+  symbol:   class ImageView
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:63: error: cannot find symbol
+    public GirafButton(final Context context, final Drawable icon) {
+                             ^
+  symbol:   class Context
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:63: error: cannot find symbol
+    public GirafButton(final Context context, final Drawable icon) {
+                                                    ^
+  symbol:   class Drawable
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:72: error: cannot find symbol
+    public GirafButton(final Context context, final String buttonText) {
+                             ^
+  symbol:   class Context
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:83: error: cannot find symbol
+    public GirafButton(final Context context, final Drawable icon, final String buttonText) {
+                             ^
+  symbol:   class Context
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:83: error: cannot find symbol
+    public GirafButton(final Context context, final Drawable icon, final String buttonText) {
+                                                    ^
+  symbol:   class Drawable
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:96: error: cannot find symbol
+    public GirafButton(final Context context, final AttributeSet attrs) {
+                             ^
+  symbol:   class Context
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:96: error: cannot find symbol
+    public GirafButton(final Context context, final AttributeSet attrs) {
+                                                    ^
+  symbol:   class AttributeSet
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:108: error: cannot find symbol
+    public GirafButton(final Context context, final AttributeSet attrs, final int defStyle) {
+                             ^
+  symbol:   class Context
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:108: error: cannot find symbol
+    public GirafButton(final Context context, final AttributeSet attrs, final int defStyle) {
+                                                    ^
+  symbol:   class AttributeSet
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:148: error: cannot find symbol
+    private void initializeButton(Context context, final AttributeSet attrs) {
+                                  ^
+  symbol:   class Context
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:148: error: cannot find symbol
+    private void initializeButton(Context context, final AttributeSet attrs) {
+                                                         ^
+  symbol:   class AttributeSet
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:216: error: cannot find symbol
+    public void setIcon(final Drawable icon){
+                              ^
+  symbol:   class Drawable
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:222: error: cannot find symbol
+    public final boolean onTouchEvent(final MotionEvent event) {
+                                            ^
+  symbol:   class MotionEvent
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:230: error: cannot find symbol
+    private OnClickListener onDisabledClickCallBack;
+            ^
+  symbol:   class OnClickListener
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GirafButton.java:236: error: cannot find symbol
+    public void setOnDisabledClickListener(final OnClickListener listener) {
+                                                 ^
+  symbol:   class OnClickListener
+  location: class GirafButton
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafBugSplashActivity.java:3: error: package android.app does not exist
+import android.app.Activity;
+                  ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafBugSplashActivity.java:4: error: package android.content does not exist
+import android.content.Intent;
+                      ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafBugSplashActivity.java:5: error: package android.os does not exist
+import android.os.Bundle;
+                 ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafBugSplashActivity.java:6: error: package android.widget does not exist
+import android.widget.TextView;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafBugSplashActivity.java:7: error: package android.widget does not exist
+import android.widget.Toast;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafBugSplashActivity.java:9: error: package com.google.analytics.tracking.android does not exist
+import com.google.analytics.tracking.android.*;
+^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafBugSplashActivity.java:10: error: cannot find symbol
+import dk.aau.cs.giraf.gui.R;
+                          ^
+  symbol:   class R
+  location: package dk.aau.cs.giraf.gui
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/activity/GirafBugSplashActivity.java:24: error: cannot find symbol
+    public void onCreate(Bundle savedInstanceState) {
+                         ^
+  symbol:   class Bundle
+  location: class GirafBugSplashActivity
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/ColorificationBisimulationRelation.java:3: error: package android.graphics does not exist
+import android.graphics.Color;
+                       ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GCheckBox.java:3: error: package android.content does not exist
+import android.content.Context;
+                      ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GCheckBox.java:4: error: package android.util does not exist
+import android.util.AttributeSet;
+                   ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GCheckBox.java:5: error: package android.widget does not exist
+import android.widget.CheckBox;
+                     ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GCheckBox.java:10: error: cannot find symbol
+public class GCheckBox extends CheckBox {
+                               ^
+  symbol: class CheckBox
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GCheckBox.java:12: error: cannot find symbol
+    public GCheckBox(Context context)
+                     ^
+  symbol:   class Context
+  location: class GCheckBox
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GCheckBox.java:18: error: cannot find symbol
+    public GCheckBox(Context context, AttributeSet attrs)
+                     ^
+  symbol:   class Context
+  location: class GCheckBox
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GCheckBox.java:18: error: cannot find symbol
+    public GCheckBox(Context context, AttributeSet attrs)
+                                      ^
+  symbol:   class AttributeSet
+  location: class GCheckBox
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GCheckBox.java:24: error: cannot find symbol
+    public GCheckBox(Context context, AttributeSet attrs, int defStyle)
+                     ^
+  symbol:   class Context
+  location: class GCheckBox
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GCheckBox.java:24: error: cannot find symbol
+    public GCheckBox(Context context, AttributeSet attrs, int defStyle)
+                                      ^
+  symbol:   class AttributeSet
+  location: class GCheckBox
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GColorPicker.java:3: error: package android.content does not exist
+import android.content.Context;
+                      ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GColorPicker.java:4: error: package android.graphics does not exist
+import android.graphics.Canvas;
+                       ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GColorPicker.java:5: error: package android.graphics does not exist
+import android.graphics.Color;
+                       ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GColorPicker.java:6: error: package android.graphics does not exist
+import android.graphics.ComposeShader;
+                       ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GColorPicker.java:7: error: package android.graphics does not exist
+import android.graphics.LinearGradient;
+                       ^
+/var/jenkins_home/workspace/giraf-component-lib/src/main/java/dk/aau/cs/giraf/gui/GColorPicker.java:8: error: package android.graphics does not exist
+import android.graphics.Paint;
+                       ^
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+100 errors
+ FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+[8mha:////4FwoyfhOzOx9WouJNXTqt3xtCn4HUWNK6W5sjcw5b4LUAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpBabBRd0uewzZWJgqChikILqSs7PK84HKneG0CCFDBDACFJYAAAMk/XNZQAAAA==[0mBUILD FAILED
+
+Total time: 7.759 secs
+Build step 'Invoke Gradle script' changed build result to FAILURE
+Build step 'Invoke Gradle script' marked build as failure
+Finished: FAILURE
