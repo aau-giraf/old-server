@@ -33,7 +33,6 @@ bootloader --location=mbr
 clearpart --all --initlabel
 part pv.01 --fstype="lvmpv" --ondisk=sda --size=1000 --grow
 part pv.02 --fstype="lvmpv" --ondisk=sdc --size=1000 --grow
-#part pv.03 --fstype="lvmpv" --ondisk=sdb --size=1000 --grow
 part /boot --fstype="xfs" --ondisk=sda --size=500
 
 volgroup centos pv.01 pv.02
@@ -64,6 +63,7 @@ yum-cron
 ntp
 nfs-utils
 cockpit 
+cockpit-dashboard
 cockpit-kubernetes
 kubernetes-master 
 etcd 
@@ -74,6 +74,5 @@ services --enabled=NetworkManager,sshd,yum-cron,ntpd,cockpit,etcd,kube-apiserver
 #------------------#
 # Network settings #
 #------------------#
-#network --bootproto=dhcp --device=ens160 --activate
 network --bootproto=static --ip=${IP} --netmask=${NETMASK} --gateway=${GATEWAY} --nameserver=${NAMESERVERS} --onboot=on --activate
 network --hostname=${HOSTNAME}
