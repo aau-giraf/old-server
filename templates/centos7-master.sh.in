@@ -15,9 +15,12 @@ KUBE_API_ADDRESS="--address=0.0.0.0"
 KUBE_API_PORT="--port=8080"
 KUBELET_PORT="--kubelet_port=10250"
 KUBE_ETCD_SERVERS="--etcd_servers=http://127.0.0.1:2379"
-KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
-KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ResourceQuota"
-KUBE_API_ARGS=""
+KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.0.0.0/16"
+KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,ServiceAccount,SecurityContextDeny,ResourceQuota"
+KUBE_API_ARGS="--service_account_key_file=${SERVICE_ACCOUNT_KEY}"
+EOF
+cat << EOF >> /etc/kubernetes/controller-manager
+KUBE_CONTROLLER_MANAGER_ARGS="--service_account_private_key_file=${SERVICE_ACCOUNT_KEY}"
 EOF
 cat << EOF > /etc/sysconfig/flanneld $
 FLANNEL_ETCD_ENDPOINTS="http://127.0.0.1:2379"$
@@ -25,6 +28,14 @@ FLANNEL_ETCD_PREFIX="/flannel/network"$
 EOF
 systemctl start etcd
 etcdctl mk /flannel/network/config '{"Network":"172.17.0.0/16"}'
+
+# kubectl
+kubectl config set-cluster default-cluster --server=http://${MASTER_SERVER}:8080
+kubectl config set-context default-context --cluster=default-cluster --user=default-admin
+kubectl config use-context default-context
+
+# Generate account service key
+openssl genrsa -out "${SERVICE_ACCOUNT_KEY}" 2048
 
 # yum-cron daily
 sed -i "s|^email_to = root|email_to = ${ADMIN_EMAIL}|" /etc/yum/yum-cron.conf
