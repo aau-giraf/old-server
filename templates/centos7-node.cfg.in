@@ -61,15 +61,15 @@ tmux
 yum-cron
 ntp
 nfs-utils
+cockpit
 kubernetes-node 
 docker 
 flannel
 %end
-services --enabled=NetworkManager,sshd,yum-cron,ntpd,kube-proxy,kubelet,docker,flanneld
+services --enabled=NetworkManager,sshd,yum-cron,ntpd,cockpit,kube-proxy,kubelet,docker,flanneld
 
 #------------------#
 # Network settings #
 #------------------#
-#network --bootproto=dhcp --device=ens160 --activate
 network --bootproto=static --ip=${IP} --netmask=${NETMASK} --gateway=${GATEWAY} --nameserver=${NAMESERVERS} --onboot=on --activate 
 network --hostname=${HOSTNAME}
