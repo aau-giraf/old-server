@@ -2,6 +2,15 @@ FROM jenkins:latest
 RUN /usr/local/bin/install-plugins.sh google-oauth-plugin android-emulator android-lint oauth-credentials git-client artifactory cas-plugin checkstyle git google-play-android-publisher postbuild-task gradle javadoc junit repository
 
 USER root
+RUN apt-get update
+RUN apt-get install -y curl libunwind8 gettext
+RUN curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?linkid=847105
+RUN mkdir -p /opt/dotnet
+RUN tar zxf dotnet.tar.gz -C /opt/dotnet
+RUN ln -s /opt/dotnet/dotnet /usr/bin/dotnet
+RUN rm dotnet.tar.gz
+
+
 ENV ANDROID_SDK_URL https://dl.google.com/android/repository/tools_r25.2.3-linux.zip
 
 RUN cd /opt && curl -o tools.zip $ANDROID_SDK_URL 
