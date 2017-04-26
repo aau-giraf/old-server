@@ -17,6 +17,9 @@ KUBELET_HOSTNAME=""
 KUBELET_API_SERVER="--api-servers=http://${ETCD_SERVER}:8080"
 EOF
 
+# Authorize master server
+ssh-keyscan -H ${COCKPIT_SERVER} >> /var/lib/cockpit/known_hosts
+
 # yum-cron daily
 sed -i "s|^email_to = root|email_to = ${ADMIN_EMAIL}|" /etc/yum/yum-cron.conf
 sed -i 's|^update_messages = no|update_messages = yes|' /etc/yum/yum-cron.conf
