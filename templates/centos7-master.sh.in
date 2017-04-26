@@ -29,7 +29,7 @@ systemctl start etcd
 etcdctl mk /flannel/network/config '{"Network":"172.17.0.0/16"}'
 
 # kubectl
-kubectl config set-cluster default-cluster --server=https://${MASTER_SERVER}:8080
+kubectl config set-cluster default-cluster --server=http://${MASTER_SERVER}:8080
 kubectl config set-context default-context --cluster=default-cluster --user=default-admin
 kubectl config use-context default-context
 

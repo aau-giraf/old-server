@@ -21,7 +21,7 @@ EOF
 ssh-keyscan -H ${COCKPIT_SERVER} >> /var/lib/cockpit/known_hosts
 
 # kubectl
-kubectl config set-cluster default-cluster --server=https://${MASTER_SERVER}:8080
+kubectl config set-cluster default-cluster --server=http://${MASTER_SERVER}:8080
 kubectl config set-context default-context --cluster=default-cluster --user=default-admin
 kubectl config use-context default-context
 
