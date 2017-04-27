@@ -16,7 +16,7 @@ KUBE_API_PORT="--port=8080"
 KUBELET_PORT="--kubelet_port=10250"
 KUBE_ETCD_SERVERS="--etcd_servers=http://127.0.0.1:2379"
 KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,ServiceAccount,SecurityContextDeny,ResourceQuota"
-KUBE_API_ARGS="--service_account_key_file=${SERVICE_ACCOUNT_KEY}"
+KUBE_API_ARGS="--service_account_key_file=${SERVICE_ACCOUNT_KEY} --client-ca-file=${SSL_DIR}/ca.crt --tls-cert-file=${SSL_DIR}/server.crt --tls-private-key-file=${SSL_DIR}/server.key"
 EOF
 cat << EOF >> /etc/kubernetes/controller-manager
 KUBE_CONTROLLER_MANAGER_ARGS="--service_account_private_key_file=${SERVICE_ACCOUNT_KEY}"
@@ -25,8 +25,17 @@ cat << EOF > /etc/sysconfig/flanneld $
 FLANNEL_ETCD_ENDPOINTS="http://127.0.0.1:2379"$
 FLANNEL_ETCD_PREFIX="/flannel/network"$
 EOF
+
+pushd ${SSL_DIR}
+openssl genrsa -out ca.key 2048
+openssl req -x509 -new -nodes -key ca.key -subj "/CN=${MASTER_SERVER}" -days 10000 -out ca.crt
+openssl genrsa -out server.key 2048
+openssl req -new -key server.key -subj "/CN=${MASTER_SERVER}" -out server.csr
+openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 10000
+popd
+
 systemctl start etcd
-etcdctl mk /flannel/network/config '{"Network":"172.17.0.0/16"}'
+etcdctl mk /flannel/network/config '{"Network":"10.254.0.0/16"}'
 
 # kubectl
 kubectl config set-cluster default-cluster --server=http://${MASTER_SERVER}:8080
