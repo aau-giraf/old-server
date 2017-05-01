@@ -9,7 +9,7 @@ EOF
 # General Kubernetes config
 cat << EOF >> /etc/kubernetes/config
 KUBE_LOGTOSTDERR="--logtostderr=true"
-KUBE_LOG_LEVEL="--v=4"
+KUBE_LOG_LEVEL="--v=0"
 KUBE_ALLOW_PRIV="--allow-privileged=true"
 KUBE_MASTER="--master=http://127.0.0.1:8080"
 EOF
@@ -19,19 +19,20 @@ cat << EOF >> /etc/kubernetes/apiserver
 KUBE_API_ADDRESS="--address=0.0.0.0"
 KUBE_API_PORT="--port=8080"
 KUBELET_PORT="--kubelet_port=10250"
+KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
 KUBE_ETCD_SERVERS="--etcd_servers=http://127.0.0.1:2379"
-KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,ServiceAccount,SecurityContextDeny,ResourceQuota"
-KUBE_API_ARGS="--service_account_key_file=${SERVICE_ACCOUNT_KEY} --client-ca-file=${SSL_DIR}/ca.crt --tls-cert-file=${SSL_DIR}/server.crt --tls-private-key-file=${SSL_DIR}/server.key"
+KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"
+KUBE_API_ARGS="--service_account_key_file=${SERVICE_ACCOUNT_KEY} --client-ca-file=${SSL_DIR}/ca.crt --tls-cert-file=${SSL_DIR}/server.cert --tls-private-key-file=${SSL_DIR}/server.key"
 EOF
 
 # Controller manager config
 cat << EOF >> /etc/kubernetes/controller-manager
-KUBE_CONTROLLER_MANAGER_ARGS="--kubeconfig=/etc/kubernetes/kubeconfig --service_account_private_key_file=${SERVICE_ACCOUNT_KEY} --root-ca-file=${SSL_DIR}/ca.crt"
+KUBE_CONTROLLER_MANAGER_ARGS="--service_account_private_key_file=${SERVICE_ACCOUNT_KEY} --root-ca-file=${SSL_DIR}/ca.crt"
 EOF
 
 # Scheduler config
 cat << EOF >> /etc/kubernetes/scheduler
-KUBE_SCHEDULER_ARGS="--kubeconfig=/etc/kubernetes/kubeconfig"
+KUBE_SCHEDULER_ARGS=""
 EOF
 
 # Flannel config
@@ -40,17 +41,22 @@ FLANNEL_ETCD_ENDPOINTS="http://127.0.0.1:2379"
 FLANNEL_ETCD_PREFIX="/flannel/network"
 EOF
 systemctl start etcd
-etcdctl mk /flannel/network/config '{"Network":"10.254.0.0/16"}'
+etcdctl mk /flannel/network/config "{ \"Network\": \"172.30.0.0/16\", \"SubnetLen\": 24, \"Backend\": { \"Type\": \"vxlan\" } }"
 
 # Generate ssl keys
 mkdir -p ${SSL_DIR}
-pushd ${SSL_DIR}
-openssl genrsa -out ca.key 2048
-openssl req -x509 -new -nodes -key ca.key -subj "/CN=${MASTER_SERVER}" -days 10000 -out ca.crt
-openssl genrsa -out server.key 2048
-openssl req -new -key server.key -subj "/CN=${MASTER_SERVER}" -out server.csr
-openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 10000
-popd
+export CERT_DIR=${SSL_DIR}
+export CERT_GROUP=kube
+wget https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/saltbase/salt/generate-cert/make-ca-cert.sh
+sh make-ca-cert.sh "${IP}" "IP:${IP},IP:10.254.0.1,DNS:kubernetes,DNS:kubernetes.default,DNS:kubernetes.default.svc,DNS:kubernetes.default.svc.cluster.local"
+#mkdir -p ${SSL_DIR}
+#pushd ${SSL_DIR}
+#openssl genrsa -out ca.key 2048
+#openssl req -x509 -new -nodes -key ca.key -subj "/CN=${MASTER_SERVER}" -days 10000 -out ca.crt
+#openssl genrsa -out server.key 2048
+#openssl req -new -key server.key -subj "/CN=${MASTER_SERVER}" -out server.csr
+#openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 10000
+#popd
 
 # Generate account service key
 openssl genrsa -out "${SERVICE_ACCOUNT_KEY}" 2048
