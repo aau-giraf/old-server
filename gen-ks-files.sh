@@ -66,7 +66,7 @@ EOF
 
     # Generate /etc/hosts
     echo "cat <<EOF >> /etc/hosts" >> $KS_FILE
-    echo "127.0.0.1 $HOSTNAME"
+    echo "127.0.0.1 $HOSTNAME" >> $KS_FILE
     cat "$TMP_DIR/hosts" >> $KS_FILE
     echo "EOF" >> $KS_FILE
 
