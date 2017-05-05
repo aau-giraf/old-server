@@ -1,4 +1,20 @@
 ---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: artifactory
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: artifactory.giraf.cs.aau.dk
+    http:
+      paths:
+      - backend:
+          serviceName: artifactory
+          servicePort: 8080
+      
+---
 kind: Service
 apiVersion: v1
 metadata:
@@ -8,11 +24,9 @@ metadata:
 spec:
   selector:
     app: artifactory
-  type: NodePort
-  clusterIP: 10.0.0.73
   ports:
   - port: 8080
-    nodePort: 30001
+    targetPort: 8081
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -29,16 +43,13 @@ spec:
     spec:
       containers:
       - name: artifactory
-        image: mattgruter/artifactory
+        image: docker.bintray.io/jfrog/artifactory-oss:latest
         ports:
-        - name: http
-          containerPort: 8080
+        - containerPort: 8081
         volumeMounts:
         - name: artifactory-vol
-          mountPath: /artifactory
-      securityContext:
-        supplementalGroups: [100003]
-        privileged: false
+          mountPath: /var/opt/jfrog/artifactory
+          subPath: artifactory
       volumes:
         - name: artifactory-vol
           persistentVolumeClaim:
