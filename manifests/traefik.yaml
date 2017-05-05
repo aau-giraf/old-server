@@ -17,6 +17,9 @@ spec:
         name: traefik-ingress-lb
     spec:
       terminationGracePeriodSeconds: 60
+      hostNetwork: true
+      nodeSelector:
+        kubernetes.io/hostname: ${TRAEFIK_NODE} # Domains point to this node
       containers:
       - image: traefik
         name: traefik-ingress-lb
@@ -34,3 +37,31 @@ spec:
         args:
         - --web
         - --kubernetes
+---        
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-web-ui
+  namespace: kube-system
+spec:
+  selector:
+    k8s-app: traefik-ingress-lb
+  ports:
+  - port: 80
+    targetPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-web-ui
+  namespace: kube-system
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: traefik.giraf.cs.aau.dk
+    http:
+      paths:
+      - backend:
+          serviceName: traefik-web-ui
+          servicePort: 80
