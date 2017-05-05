@@ -20,6 +20,8 @@ KUBELET_PORT="--port=10250"
 KUBELET_HOSTNAME=""
 # Set URL to API server
 KUBELET_API_SERVER="--api-servers=http://${ETCD_SERVER}:8080"
+# Setup DNS
+KUBELET_ARGS="--cluster-dns=${DNS_SERVER} --cluster-domain=cluster.local"
 EOF
 
 # Authorize master server
