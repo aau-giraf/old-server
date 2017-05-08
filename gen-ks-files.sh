@@ -12,7 +12,7 @@ USERS=$(ls $USER_DIR)
 INSTANCE_IDS=$(ls $INSTANCE_DIR)
 
 SUB_VARS_KS='$IP:$DISTRO:$NETMASK:$GATEWAY:$NAMESERVERS:$HOSTNAME'
-SUB_VARS_SCRIPT='$ADMIN_EMAIL:$MASTER_SERVER:$ETCD_SERVER:$COCKPIT_SERVER:$SERVICE_ACCOUNT_KEY:$SSL_DIR:$IP:$TRAEFIK_NODE'
+SUB_VARS_SCRIPT='$ADMIN_EMAIL:$MASTER_SERVER:$ETCD_SERVER:$COCKPIT_SERVER:$SERVICE_ACCOUNT_KEY:$SSL_DIR:$IP:$TRAEFIK_NODE:$DNS_SERVER'
 
 # Load global configuration
 . $WORK_DIR/global-conf.sh
@@ -89,7 +89,13 @@ EOF
         echo "chown -R $USER:$USER /home/$USER/.ssh/" >> $KS_FILE
     done
 
-    # Cat ks/$DISTRO-$TYPE.sh to post script
+    # First boot script
+    echo "echo \"@reboot root /bin/bash /root/firstboot.sh\" >> /etc/crontab" >> $KS_FILE
+    echo "cat << EOF_FBS >> /root/firstboot.sh" >> $KS_FILE
     cat $SCRIPT_FILE >> $KS_FILE
+    echo "# Remove firstboot script" >> $KS_FILE
+    echo "cat /etc/crontab | grep -v firstboot > /etc/crontab.tmp" >> $KS_FILE
+    echo "mv /etc/crontab.tmp /etc/crontab" >> $KS_FILE
+    echo "EOF_FBS" >> $KS_FILE
     echo "%end" >> $KS_FILE
 done

@@ -32,11 +32,13 @@ bootloader --location=mbr
 #--------------------#
 clearpart --all --initlabel
 part pv.01 --fstype="lvmpv" --ondisk=sda --size=1000 --grow
-part pv.02 --fstype="lvmpv" --ondisk=sdc --size=1000 --grow
+part pv.02 --fstype="lvmpv" --ondisk=sdb --size=1000 --grow
+part pv.03 --fstype="lvmpv" --ondisk=sdc --size=1000 --grow
 part /boot --fstype="xfs" --ondisk=sda --size=500
 
-volgroup centos pv.01 pv.02
+volgroup centos pv.01 pv.02 pv.03
 logvol /  --fstype="xfs" --size=1000 --grow --name=root --vgname=centos
+logvol /var  --fstype="xfs" --size=100000 --name=var --vgname=centos
 logvol swap  --fstype="swap" --size=2048 --name=swap --vgname=centos
 
 #-----------------#
@@ -69,7 +71,7 @@ kubernetes-master
 etcd 
 flannel
 %end
-services --enabled=NetworkManager,sshd,yum-cron,ntpd,cockpit,etcd,kube-apiserver,kube-controller-manager,kube-scheduler,flanneld,nfs-server
+services --enabled=NetworkManager,sshd,yum-cron,ntpd,cockpit,rpcbind,nfs-server,nfs-lock,nfs-idmap
 
 #------------------#
 # Network settings #
