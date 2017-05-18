@@ -19,16 +19,16 @@ EOF
 cat << EOF >> /etc/kubernetes/apiserver
 KUBE_API_ADDRESS="--address=0.0.0.0"
 KUBE_API_PORT="--port=8080"
-KUBELET_PORT="--kubelet_port=10250"
+KUBELET_PORT="--kubelet-port=10250"
 KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
-KUBE_ETCD_SERVERS="--etcd_servers=http://127.0.0.1:2379"
-KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"
-KUBE_API_ARGS="--service_account_key_file=${SERVICE_ACCOUNT_KEY} --client-ca-file=${SSL_DIR}/ca.crt --tls-cert-file=${SSL_DIR}/server.cert --tls-private-key-file=${SSL_DIR}/server.key"
+KUBE_ETCD_SERVERS="--etcd-servers=http://127.0.0.1:2379"
+KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"
+KUBE_API_ARGS="--service-account-key-file=${SERVICE_ACCOUNT_KEY} --client-ca-file=${CERT_DIR}/ca.crt --tls-cert-file=${CERT_DIR}/server.cert --tls-private-key-file=${CERT_DIR}/server.key"
 EOF
 
 # Controller manager config
 cat << EOF >> /etc/kubernetes/controller-manager
-KUBE_CONTROLLER_MANAGER_ARGS="--service_account_private_key_file=${SERVICE_ACCOUNT_KEY} --root-ca-file=${SSL_DIR}/ca.crt"
+KUBE_CONTROLLER_MANAGER_ARGS="--service-account-private-key-file=${SERVICE_ACCOUNT_KEY} --root-ca-file=${CERT_DIR}/ca.crt"
 EOF
 
 # Scheduler config
@@ -52,8 +52,7 @@ systemctl start flanneld
 systemctl enable flanneld
 
 # Generate ssl keys
-mkdir -p ${SSL_DIR}
-export CERT_DIR=${SSL_DIR}
+mkdir -p ${CERT_DIR}
 export CERT_GROUP=kube
 wget https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/saltbase/salt/generate-cert/make-ca-cert.sh
 sh make-ca-cert.sh "${IP}" "IP:${IP},IP:10.254.0.1,DNS:kubernetes,DNS:kubernetes.default,DNS:kubernetes.default.svc,DNS:kubernetes.default.svc.cluster.local"
@@ -282,7 +281,7 @@ kubectl create -f traefik.yaml
 # NFS
 mkdir /var/nfsshare
 chmod -R 777 /var/nfsshare/
-echo "/var/nfsshare    *(rw,sync,no_root_squash,no_all_squash)" >> /etc/exports
+echo "/var/nfsshare    kube-*(rw,sync,no_root_squash,no_all_squash)" >> /etc/exports
 
 # yum-cron daily
 sed -i "s|^email_to = root|email_to = ${ADMIN_EMAIL}|" /etc/yum/yum-cron.conf
