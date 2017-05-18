@@ -67,7 +67,7 @@ nfs-utils
 cockpit 
 cockpit-dashboard
 cockpit-kubernetes
-kubernetes-master 
+kubernetes-master
 etcd 
 flannel
 %end
