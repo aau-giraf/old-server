@@ -64,7 +64,23 @@ spec:
   - ReadWriteMany
   resources:
     requests:
-      storage: 5Gi
+      storage: 10Gi
   selector:
     matchLabels:
-      volume: ci
+      volume: artifactory-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: artifactory-pv
+  labels: 
+    volume: artifactory-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /var/nfsshare
+    server: master.giraf.cs.aau.dk
+    readOnly: false
