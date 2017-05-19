@@ -41,7 +41,7 @@ spec:
         app: jenkins
     spec:
       containers:
-      - name: jenknins
+      - name: jenkins
         image: jenkins:latest
         ports:
         - name: http
