@@ -64,7 +64,7 @@ spec:
   - ReadWriteMany
   resources:
     requests:
-      storage: 10Gi
+      storage: 9Gi
   selector:
     matchLabels:
       volume: jenkins-pv

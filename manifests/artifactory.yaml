@@ -56,6 +56,20 @@ spec:
             claimName: artifactory-pvc
 ---
 apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: artifactory-pvc
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 9Gi
+  selector:
+    matchLabels:
+      volume: artifactory-pv
+---
+apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: artifactory-pv
@@ -70,17 +84,3 @@ spec:
     path: /var/nfsshare
     server: master.giraf.cs.aau.dk
     readOnly: false
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: artifactory-pvc
-spec:
-  accessModes:
-  - ReadWriteMany
-  resources:
-    requests:
-      storage: 10Gi
-  selector:
-    matchLabels:
-      volume: artifactory-pv
