@@ -44,8 +44,7 @@ spec:
       - name: jenkins
         image: jenkins:latest
         ports:
-        - name: http
-          containerPort: 8080
+        - containerPort: 8080
         volumeMounts:
         - name: jenkins-vol
           mountPath: /var/jenkins_home
@@ -64,7 +63,7 @@ spec:
   - ReadWriteMany
   resources:
     requests:
-      storage: 9Gi
+      storage: 10Gi
   selector:
     matchLabels:
       volume: jenkins-pv
