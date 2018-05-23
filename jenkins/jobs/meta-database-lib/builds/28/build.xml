@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>noverb14@student.aau.dk</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.plugins.git.util.BuildData plugin="git@3.2.0">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/maven-test</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.4.1">
+              <sha1>9125bf01c31da017db78c91f562e3604b76ae5db</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/maven-test</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.4.1">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>23</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.4.1">
+              <sha1>da0f5d611a4fe3f5bb466f4a128aa4b88b723228</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/master</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>28</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry[2]/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction plugin="git@3.2.0">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/var/jenkins_home/workspace/meta-database-lib</ws>
+    </hudson.plugins.git.GitTagAction>
+    <hudson.scm.SCMRevisionState_-None/>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.25"/>
+  </actions>
+  <queueId>38</queueId>
+  <timestamp>1491833777546</timestamp>
+  <startTime>1491833777553</startTime>
+  <result>FAILURE</result>
+  <duration>6778</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/workspace/meta-database-lib</workspace>
+  <hudsonVersion>2.32.3</hudsonVersion>
+  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@3.2.0">
+    <authorOrCommitter>false</authorOrCommitter>
+  </scm>
+  <culprits class="com.google.common.collect.RegularImmutableSortedSet">
+    <string>nimoov</string>
+  </culprits>
+</build>

@@ -1,0 +1,12 @@
+commit e8fcc0011305bda8b5ef7bb4785316b1795d9b22
+tree de35be7d444d72cf1ab139bb23207491c6bbeeae
+parent c4b0e1007ce0c6f2747b75f3fed5e7651be18b1e
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-06 14:23:51 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-06 14:23:51 +0200
+
+    gradle: use artifactory plugin
+
+
+
+:100644 100644 34393b3d1fdc71603897d1f0b6ece214a622c7c0 f673df7ac03e6e4b0a4df72fd7044f94cb0cdc33 M	build.gradle
+:000000 100644 0000000000000000000000000000000000000000 1c3e458fd5df1411884f33f8814618c8a9427aca A	gradle.properties

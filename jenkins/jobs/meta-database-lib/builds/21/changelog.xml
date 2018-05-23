@@ -1,0 +1,77 @@
+commit 9125bf01c31da017db78c91f562e3604b76ae5db
+tree d2ae17e2d2af52db2047f83896dbaf6518b478da
+parent 696ebbcfe036e3dfe44b10cae9fe056c76095e3e
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:15:45 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:15:45 +0200
+
+    Fix my life #7
+
+
+
+:100644 100644 31335b96ac926f76f58b1498457ffe9fc7f1c09a 35b827b56db06a37e8586cd42f75f2c0eea9965d M	build.gradle
+commit 696ebbcfe036e3dfe44b10cae9fe056c76095e3e
+tree 6fd5de24c6f34018e2997605a8736cc11c1f30a7
+parent c9e575954f96c5ed76fb810a1d3ecf539d62ed5d
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:11:53 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:11:53 +0200
+
+    Fix my life #6
+
+
+
+:100644 100644 fcdc842c72d8a393f8d60aefa8310ec2c5fa2a53 31335b96ac926f76f58b1498457ffe9fc7f1c09a M	build.gradle
+commit c9e575954f96c5ed76fb810a1d3ecf539d62ed5d
+tree 0090741bca7f080899b47287f4c99ff101c8e8dc
+parent ec5562f31411cb8aa3e3314b020cb4ab9660d928
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:09:00 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:09:00 +0200
+
+    Fix my life #5
+
+
+
+:100644 100644 c06c8763dc5a7945bc18b91c88895c2e344f0c9b fcdc842c72d8a393f8d60aefa8310ec2c5fa2a53 M	build.gradle
+commit ec5562f31411cb8aa3e3314b020cb4ab9660d928
+tree 732f84882eeef9656138ef85fea125817730a21c
+parent 260fb404c3a5055622a4f867194fd136a3146265
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:07:37 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:07:37 +0200
+
+    Fix my life #4
+
+
+
+:100644 100644 e014453d8c77ef1c80d497d43cbbfea6fe2f6b1f c06c8763dc5a7945bc18b91c88895c2e344f0c9b M	build.gradle
+commit 260fb404c3a5055622a4f867194fd136a3146265
+tree bd4e705caa502bed945258393cf391a7d0b4392c
+parent a2733004916c540c63c335892b7b311fa4da9052
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:05:21 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 13:05:21 +0200
+
+    Fix my life #3
+
+
+
+:100644 100644 a3b03b3b09ad2f485a80da04dd33a5ebffe96236 e014453d8c77ef1c80d497d43cbbfea6fe2f6b1f M	build.gradle
+commit a2733004916c540c63c335892b7b311fa4da9052
+tree df6c4592525397f26a6953b92451be9faa7ae22b
+parent 8c8a9a4e89ce49f7201e992447f61da04204d694
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 12:57:43 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 12:57:43 +0200
+
+    Fix my life #2
+
+
+
+:100644 100644 bc5781cf833dbfecd11a98f46dd9110bc7ba9f23 a3b03b3b09ad2f485a80da04dd33a5ebffe96236 M	build.gradle
+commit 8c8a9a4e89ce49f7201e992447f61da04204d694
+tree eb87be52ecdbefbcae474995476770ee14f63ba9
+parent ed91132675fe72b5616f99053cf529512e70f167
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 12:55:56 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 12:55:56 +0200
+
+    Fix my life
+
+
+
+:100644 100644 676ce12625dfc70162a8c5ae25980cdde884b46f bc5781cf833dbfecd11a98f46dd9110bc7ba9f23 M	build.gradle

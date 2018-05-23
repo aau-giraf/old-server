@@ -1,0 +1,12 @@
+commit 07bed3e006cfe3de20060ce21ac1e6db9a92314b
+tree 9adeba4d85f836bcf190c43b5e5403efd6b6804b
+parent e19d097897b66e24eda3432425dfe724d107385e
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:48:10 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:48:10 +0200
+
+    Revert "Fix my life #15"
+
+    This reverts commit e19d097897b66e24eda3432425dfe724d107385e.
+
+
+:100644 100644 2f71e9e7a2abe3454bdc75f0a1f4f4f75063dbc5 3f3fb303077590242b5b03f5ab08c8fd6826eaef M	settings.gradle

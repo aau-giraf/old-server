@@ -1,0 +1,35 @@
+Started by user [8mha:////4NmSnY5hFSa2v+4DK/6XqFyKRT2cvWd/ZyNOGusI2m2lAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZZ/dLi1CL9vPyy1KIkQxOH4pLSlNS8Er3ExFK9lGwA1L1LDtIAAAA=[0mnoverb14@student.aau.dk
+Building in workspace /var/jenkins_home/workspace/meta-database-lib
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git # timeout=10
+Fetching upstream changes from http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git
+ > git --version # timeout=10
+ > git fetch --tags --progress http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision e82112819d5372f6234ada21ae2046bdda9775a5 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e82112819d5372f6234ada21ae2046bdda9775a5
+ > git rev-list e82112819d5372f6234ada21ae2046bdda9775a5 # timeout=10
+Jenkins Artifactory Plugin version: 2.10.3
+[Gradle] - Launching build.
+[meta-database-lib] $ /var/jenkins_home/workspace/meta-database-lib/gradlew artifactoryPublish
+[buildinfo] Properties file found at '/tmp/buildInfo1634810871297592460.properties'
+[8mha:////4CZl4ZiQ+PyWwWDKvENHfCrUXrsxjTLCvcp1vCXylcQtAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava UP-TO-DATE
+[8mha:////4CZl4ZiQ+PyWwWDKvENHfCrUXrsxjTLCvcp1vCXylcQtAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processResources UP-TO-DATE
+[8mha:////4CZl4ZiQ+PyWwWDKvENHfCrUXrsxjTLCvcp1vCXylcQtAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:classes UP-TO-DATE
+[8mha:////4CZl4ZiQ+PyWwWDKvENHfCrUXrsxjTLCvcp1vCXylcQtAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:jar UP-TO-DATE
+[8mha:////4CZl4ZiQ+PyWwWDKvENHfCrUXrsxjTLCvcp1vCXylcQtAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:artifactoryPublish
+Deploying artifact: http://jenkins.giraf.cs.aau.dk:8080/artifactory/libs-snapshot-local/dk/aau/cs/giraf/meta-database/1.0-SNAPSHOT/meta-database-1.0-SNAPSHOT.jar
+Deploying artifact: http://jenkins.giraf.cs.aau.dk:8080/artifactory/libs-snapshot-local/dk/aau/cs/giraf/meta-database/1.0-SNAPSHOT/meta-database-1.0-SNAPSHOT.pom
+Deploying build info to: http://jenkins.giraf.cs.aau.dk:8080/artifactory/api/build
+Build successfully deployed. Browse it in Artifactory under http://jenkins.giraf.cs.aau.dk:8080/artifactory/webapp/builds/meta-database-lib/50/2017-04-10T15:28:17.819+0000/
+
+[8mha:////4FwoyfhOzOx9WouJNXTqt3xtCn4HUWNK6W5sjcw5b4LUAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpBabBRd0uewzZWJgqChikILqSs7PK84HKneG0CCFDBDACFJYAAAMk/XNZQAAAA==[0mBUILD SUCCESSFUL
+
+Total time: 6.44 secs
+
+This build could be faster, please consider using the Gradle Daemon: https://docs.gradle.org/2.10/userguide/gradle_daemon.html
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+Finished: SUCCESS

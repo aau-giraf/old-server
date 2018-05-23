@@ -1,0 +1,11 @@
+commit cdb9c37e53c931a904746121e79a7d91de3fcb2b
+tree 9a515a1b74c211a451449f80ee9a93ee22fe9596
+parent 1fe782847dd088fb0cbb143eea517488c525eef9
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:54:15 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:54:15 +0200
+
+    Use Artifactory plugin
+
+
+
+:100755 100644 000fc75f9cf0eb2e3dd206909e1239a2b1cd5075 a0ada380d49b9f44bead798bfba0274a32c0d524 M	build.gradle

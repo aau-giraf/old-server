@@ -1,0 +1,11 @@
+commit d2698e2bae698478a54a0b8c67c12e2d9dc5848f
+tree a1f40e2473f093f256d8a789e647ec9905760a8d
+parent cdb9c37e53c931a904746121e79a7d91de3fcb2b
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:56:08 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:56:08 +0200
+
+    Fix version
+
+
+
+:000000 100644 0000000000000000000000000000000000000000 6d0ab6795b2dc39db4d9bd6e938535b1bb37ec92 A	gradle.properties

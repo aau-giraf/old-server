@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>VERSION</name>
+          <description></description>
+          <value>1.0-SNAPSHOT</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames class="hudson.model.ParametersDefinitionProperty$1">
+        <outer-class>
+          <parameterDefinitions>
+            <hudson.model.StringParameterDefinition>
+              <name>VERSION</name>
+              <description></description>
+              <defaultValue>1.0-SNAPSHOT</defaultValue>
+            </hudson.model.StringParameterDefinition>
+          </parameterDefinitions>
+        </outer-class>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>fvoldb14@student.aau.dk</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.25"/>
+  </actions>
+  <queueId>3</queueId>
+  <timestamp>1493110710938</timestamp>
+  <startTime>1493110710940</startTime>
+  <result>FAILURE</result>
+  <duration>127316</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/workspace/meta-database-lib</workspace>
+  <hudsonVersion>2.32.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

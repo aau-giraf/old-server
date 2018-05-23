@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>noverb14@student.aau.dk</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.plugins.git.util.BuildData plugin="git@3.2.0">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/maven-test</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.4.1">
+              <sha1>07bed3e006cfe3de20060ce21ac1e6db9a92314b</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/maven-test</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.4.1">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>48</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.4.1">
+              <sha1>e82112819d5372f6234ada21ae2046bdda9775a5</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/master</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>51</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry[2]/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>http://git.giraf.cs.aau.dk/Giraf17-AndroidLibs/meta-database-lib.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction plugin="git@3.2.0">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/var/jenkins_home/workspace/meta-database-lib</ws>
+    </hudson.plugins.git.GitTagAction>
+    <hudson.scm.SCMRevisionState_-None/>
+    <org.jfrog.hudson.BuildInfoResultAction plugin="artifactory@2.10.3">
+      <publishedBuildsDetails>
+        <org.jfrog.hudson.PublishedBuildDetails>
+          <artifactoryUrl>http://jenkins.giraf.cs.aau.dk:8080/artifactory</artifactoryUrl>
+          <buildName>meta-database-lib</buildName>
+          <buildNumber>51</buildNumber>
+        </org.jfrog.hudson.PublishedBuildDetails>
+      </publishedBuildsDetails>
+      <build class="build" reference="../../.."/>
+    </org.jfrog.hudson.BuildInfoResultAction>
+    <com.sonyericsson.rebuild.RebuildAction plugin="rebuild@1.25"/>
+    <org.jfrog.hudson.release.promotion.UnifiedPromoteBuildAction plugin="artifactory@2.10.3">
+      <build class="build" reference="../../.."/>
+      <promotionCandidates>
+        <entry>
+          <string>0</string>
+          <org.jfrog.hudson.release.promotion.PromotionInfo>
+            <promotionConfig>
+              <buildName>meta-database-lib</buildName>
+              <buildNumber>51</buildNumber>
+              <includeDependencies>false</includeDependencies>
+              <copy>false</copy>
+              <failFast>true</failFast>
+            </promotionConfig>
+            <configurator class="org.jfrog.hudson.gradle.ArtifactoryGradleConfigurator">
+              <deployMaven>true</deployMaven>
+              <deployIvy>false</deployIvy>
+              <deployBuildInfo>true</deployBuildInfo>
+              <includeEnvVars>false</includeEnvVars>
+              <deployerCredentialsConfig>
+                <credentials>
+                  <username></username>
+                  <password></password>
+                </credentials>
+                <credentialsId></credentialsId>
+                <overridingCredentials>false</overridingCredentials>
+                <ignoreCredentialPluginDisabled>false</ignoreCredentialPluginDisabled>
+              </deployerCredentialsConfig>
+              <resolverCredentialsConfig>
+                <credentials>
+                  <username></username>
+                  <password></password>
+                </credentials>
+                <credentialsId></credentialsId>
+                <overridingCredentials>false</overridingCredentials>
+                <ignoreCredentialPluginDisabled>false</ignoreCredentialPluginDisabled>
+              </resolverCredentialsConfig>
+              <runChecks>false</runChecks>
+              <violationRecipients></violationRecipients>
+              <includePublishArtifacts>false</includePublishArtifacts>
+              <scopes></scopes>
+              <licenseAutoDiscovery>true</licenseAutoDiscovery>
+              <disableLicenseAutoDiscovery>false</disableLicenseAutoDiscovery>
+              <ivyPattern>[organisation]/[module]/ivy-[revision].xml</ivyPattern>
+              <enableIssueTrackerIntegration>false</enableIssueTrackerIntegration>
+              <aggregateBuildIssues>false</aggregateBuildIssues>
+              <artifactPattern>[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]</artifactPattern>
+              <notM2Compatible>false</notM2Compatible>
+              <artifactDeploymentPatterns>
+                <includePatterns></includePatterns>
+                <excludePatterns></excludePatterns>
+              </artifactDeploymentPatterns>
+              <discardOldBuilds>false</discardOldBuilds>
+              <passIdentifiedDownstream>false</passIdentifiedDownstream>
+              <releaseWrapper>
+                <tagPrefix></tagPrefix>
+                <releaseBranchPrefix>REL-BRANCH-</releaseBranchPrefix>
+                <targetRemoteName></targetRemoteName>
+                <alternativeTasks></alternativeTasks>
+                <releasePropsKeys></releasePropsKeys>
+                <nextIntegPropsKeys></nextIntegPropsKeys>
+                <defaultReleaseStagingRepository></defaultReleaseStagingRepository>
+                <useReleaseBranch>true</useReleaseBranch>
+              </releaseWrapper>
+              <discardBuildArtifacts>true</discardBuildArtifacts>
+              <matrixParams></matrixParams>
+              <skipInjectInitScript>true</skipInjectInitScript>
+              <allowPromotionOfNonStagedBuilds>false</allowPromotionOfNonStagedBuilds>
+              <allowBintrayPushOfNonStageBuilds>false</allowBintrayPushOfNonStageBuilds>
+              <blackDuckRunChecks>false</blackDuckRunChecks>
+              <blackDuckAppName></blackDuckAppName>
+              <blackDuckAppVersion></blackDuckAppVersion>
+              <filterExcludedArtifactsFromBuild>true</filterExcludedArtifactsFromBuild>
+              <resolverDetails>
+                <artifactoryName>763202127@1491385995195</artifactoryName>
+                <artifactoryUrl>http://jenkins.giraf.cs.aau.dk:8080/artifactory</artifactoryUrl>
+                <resolveReleaseRepository>
+                  <keyFromText></keyFromText>
+                  <keyFromSelect></keyFromSelect>
+                  <dynamicMode>false</dynamicMode>
+                </resolveReleaseRepository>
+                <stagingPlugin/>
+              </resolverDetails>
+              <defaultPromotionTargetRepository></defaultPromotionTargetRepository>
+              <details>
+                <artifactoryName>763202127@1491385995195</artifactoryName>
+                <artifactoryUrl>http://jenkins.giraf.cs.aau.dk:8080/artifactory</artifactoryUrl>
+                <deployReleaseRepository>
+                  <keyFromText></keyFromText>
+                  <keyFromSelect></keyFromSelect>
+                  <dynamicMode>false</dynamicMode>
+                </deployReleaseRepository>
+                <stagingPlugin>
+                  <pluginName></pluginName>
+                </stagingPlugin>
+                <userPluginKey></userPluginKey>
+              </details>
+              <deployArtifacts>true</deployArtifacts>
+              <envVarsPatterns>
+                <includePatterns></includePatterns>
+                <excludePatterns>*password*,*secret*,*key*</excludePatterns>
+              </envVarsPatterns>
+              <blackDuckReportRecipients></blackDuckReportRecipients>
+              <blackDuckScopes></blackDuckScopes>
+              <blackDuckIncludePublishedArtifacts>false</blackDuckIncludePublishedArtifacts>
+              <autoCreateMissingComponentRequests>true</autoCreateMissingComponentRequests>
+              <autoDiscardStaleComponentRequests>true</autoDiscardStaleComponentRequests>
+              <customBuildName></customBuildName>
+              <overrideBuildName>false</overrideBuildName>
+            </configurator>
+            <id>0</id>
+          </org.jfrog.hudson.release.promotion.PromotionInfo>
+        </entry>
+      </promotionCandidates>
+      <currentPromotionCandidate reference="../promotionCandidates/entry/org.jfrog.hudson.release.promotion.PromotionInfo"/>
+      <useCopy>false</useCopy>
+      <failFast>true</failFast>
+      <includeDependencies>false</includeDependencies>
+    </org.jfrog.hudson.release.promotion.UnifiedPromoteBuildAction>
+    <org.jfrog.hudson.BintrayPublish.BintrayPublishAction plugin="artifactory@2.10.3">
+      <build class="build" reference="../../.."/>
+      <configurator class="org.jfrog.hudson.gradle.ArtifactoryGradleConfigurator" reference="../../org.jfrog.hudson.release.promotion.UnifiedPromoteBuildAction/promotionCandidates/entry/org.jfrog.hudson.release.promotion.PromotionInfo/configurator"/>
+      <override>false</override>
+    </org.jfrog.hudson.BintrayPublish.BintrayPublishAction>
+  </actions>
+  <queueId>65</queueId>
+  <timestamp>1491839107292</timestamp>
+  <startTime>1491839107293</startTime>
+  <result>SUCCESS</result>
+  <duration>7417</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/workspace/meta-database-lib</workspace>
+  <hudsonVersion>2.32.3</hudsonVersion>
+  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@3.2.0">
+    <authorOrCommitter>false</authorOrCommitter>
+  </scm>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

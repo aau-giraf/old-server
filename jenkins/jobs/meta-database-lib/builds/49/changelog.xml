@@ -1,0 +1,11 @@
+commit e82112819d5372f6234ada21ae2046bdda9775a5
+tree b008533d806303f1130f78552ad804023e64d203
+parent 61ff25939c243aca1e381693c1ef45078385be3c
+author Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:51:02 +0200
+committer Niclas Moeslund Overby <nimoov@prozum.dk> 2017-04-10 16:51:02 +0200
+
+    Change Gradle project name
+
+
+
+:100644 100644 2f71e9e7a2abe3454bdc75f0a1f4f4f75063dbc5 3f3fb303077590242b5b03f5ab08c8fd6826eaef M	settings.gradle
