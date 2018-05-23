@@ -1,0 +1,86 @@
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: artifactory
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: artifactory.giraf.cs.aau.dk
+    http:
+      paths:
+      - backend:
+          serviceName: artifactory
+          servicePort: 8080  
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: artifactory
+  labels:
+    app: artifactory
+spec:
+  selector:
+    app: artifactory
+  ports:
+  - port: 8080
+    targetPort: 8081
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: artifactory
+  labels:
+    app: artifactory
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: artifactory
+    spec:
+      containers:
+      - name: artifactory
+        image: docker.bintray.io/jfrog/artifactory-oss:latest
+        ports:
+        - containerPort: 8081
+        volumeMounts:
+        - name: artifactory-vol
+          mountPath: /var/opt/jfrog/artifactory
+          subPath: artifactory
+      volumes:
+        - name: artifactory-vol
+          persistentVolumeClaim:
+            claimName: artifactory-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: artifactory-pvc
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  selector:
+    matchLabels:
+      volume: artifactory-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: artifactory-pv
+  labels: 
+    volume: artifactory-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /var/nfsshare
+    server: master.giraf.cs.aau.dk
+    readOnly: false
